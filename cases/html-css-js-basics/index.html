@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Three Pillars of the Web — case study · Arseny Asyanov</title>
+<meta name="description" content="Case study of an educational site about HTML, CSS and JavaScript: structure, a code sandbox with a live iframe preview, demos, a quiz, running from disk with no dependencies, and what’s worth improving.">
+<meta name="theme-color" content="#E9EDF3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Three Pillars of the Web — case study">
+<meta property="og:image" content="https://strangehul1-design.github.io/web-chef-portfolio/assets/img/cases/html-css-js-basics/bs-hero-1440-1440.jpg">
+<link rel="canonical" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/html-css-js-basics/">
+<link rel="alternate" hreflang="en" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/html-css-js-basics/">
+<link rel="alternate" hreflang="ru" href="https://strangehul1-design.github.io/web-chef-portfolio/ru/cases/html-css-js-basics/">
+<link rel="alternate" hreflang="x-default" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/html-css-js-basics/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E9EDF3'/%3E%3Cg fill='%230B1220'%3E%3Ccircle cx='18' cy='18' r='4'/%3E%3Ccircle cx='32' cy='18' r='4'/%3E%3Ccircle cx='46' cy='18' r='4'/%3E%3Ccircle cx='18' cy='32' r='4'/%3E%3Ccircle cx='46' cy='32' r='4'/%3E%3Ccircle cx='18' cy='46' r='4'/%3E%3Ccircle cx='32' cy='46' r='4'/%3E%3Ccircle cx='46' cy='46' r='4'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%232F5BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500&family=Unbounded:wght@600;700&display=swap">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<link rel="stylesheet" href="../../assets/css/case.css">
+<script>document.documentElement.className = 'js';</script>
+<script src="../../assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to case study</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" translate="no"><span>DIGITAL FOR BUSINESS</span><span class="sep"> · </span><span>ARSENY ASYANOV</span></a>
+    <div class="site-header__right">
+      <nav aria-label="Sections">
+        <ul class="site-nav">
+          <li><a href="../../#works">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <span class="lang-switch__opt" aria-current="true">EN</span>
+        <a class="lang-switch__opt" href="../../ru/cases/html-css-js-basics/" hreflang="ru" lang="ru" data-lang-switch aria-label="Русская версия">RU</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap case-hero">
+    <div class="case-head reveal">
+      <span class="case-num" aria-hidden="true">04</span>
+      <div class="case-title-wrap">
+        <p class="kicker">Case study · Educational website</p>
+        <h1 class="case-title">Three Pillars of the Web</h1>
+      </div>
+    </div>
+    <p class="case-lead reveal d1">An educational one-page site about the three technologies every website is built from: what HTML, CSS and JavaScript are, how they differ and how they work together. It’s made from exactly those three technologies, with live demos, a code sandbox and a short quiz. The site itself is in Russian (original title: “Три кита веба”).</p>
+    <dl class="case-facts reveal d2">
+      <div><dt>Type</dt><dd>Educational website, personal project</dd></div>
+      <div><dt>Date</dt><dd>September 9, 2026, 1&nbsp;commit</dd></div>
+      <div><dt>Stack</dt><dd>HTML, CSS, JS in three files with no dependencies · 1,251&nbsp;lines</dd></div>
+      <div><dt>Links</dt><dd><a href="https://strangehul1-design.github.io/html-css-js-basics/" target="_blank" rel="noopener">live page&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/html-css-js-basics" target="_blank" rel="noopener">code on GitHub&nbsp;↗</a></dd></div>
+    </dl>
+    <div class="shot-row reveal d3">
+      <div>
+        <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Enlarge: first screen on desktop">
+          <span class="frame__bar" translate="no">strangehul1-design.github.io/html-css-js-basics/</span>
+          <img src="../../assets/img/cases/html-css-js-basics/bs-hero-1440-800.jpg" srcset="../../assets/img/cases/html-css-js-basics/bs-hero-1440-800.jpg 800w, ../../assets/img/cases/html-css-js-basics/bs-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="First screen in the dark theme: the Russian headline “HTML, CSS and JavaScript — what every website is made of” and three cards: HTML is the skeleton, CSS the appearance, JavaScript the behaviour" fetchpriority="high">
+        </button>
+        <p class="shot-caption">First screen, 1440px wide.</p>
+      </div>
+      <div>
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="1" aria-label="Enlarge: first screen on a phone">
+          <img src="../../assets/img/cases/html-css-js-basics/m-bs-hero-393.jpg" srcset="../../assets/img/cases/html-css-js-basics/m-bs-hero-393.jpg 393w, ../../assets/img/cases/html-css-js-basics/m-bs-hero-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="First screen on a 393px phone" loading="lazy">
+        </button>
+        <p class="shot-caption">Phone, 393px.</p>
+      </div>
+      <div>
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="2" aria-label="Enlarge: sandbox on a phone">
+          <img src="../../assets/img/cases/html-css-js-basics/m-bs-sandbox-393.jpg" srcset="../../assets/img/cases/html-css-js-basics/m-bs-sandbox-393.jpg 393w, ../../assets/img/cases/html-css-js-basics/m-bs-sandbox-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="The sandbox on a phone: HTML, CSS, JS tabs and code" loading="lazy">
+        </button>
+        <p class="shot-caption">Sandbox on a phone.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap case-body">
+    <section class="case-block reveal" aria-labelledby="why">
+      <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Who it’s for and why</h2></div>
+      <div class="case-block__content prose">
+        <p>A page for complete beginners: explain the basics of front-end development in one evening, in plain language, and let people try things out right away. Instead of dry definitions there’s an analogy (HTML is the skeleton, CSS the clothes, JavaScript the ability to move), code examples with a “Copy” button and demos where the result shows up instantly.</p>
+        <p>It also demonstrates the approach itself: no frameworks, no bundler, no web fonts — three files you open with a double click, and they work offline.</p>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="what">
+      <div class="case-block__label"><p class="kicker">02</p><h2 id="what">What was built</h2></div>
+      <div class="case-block__content">
+        <ol class="structure" aria-label="Page sections">
+          <li><b>First screen</b><span>“HTML, CSS and JavaScript — what every website is made of” and three analogy cards with a code example each</span></li>
+          <li><b>HTML</b><span>tags and attributes, the document skeleton, semantic markup</span></li>
+          <li><b>CSS</b><span>selectors, the box model, the cascade and specificity; a live demo driven by buttons</span></li>
+          <li><b>JavaScript</b><span>variables, functions, conditions, loops, the DOM and events; a counter as an example</span></li>
+          <li><b>How they work together</b><span>what happens while a page loads, plus a comparison table of the three technologies</span></li>
+          <li><b>Sandbox</b><span>an editor with HTML / CSS / JS tabs and a live preview</span></li>
+          <li><b>Mini quiz</b><span>five questions with explanations and a final score</span></li>
+          <li><b>Beginner’s route</b><span>where to start and what to read next</span></li>
+        </ol>
+        <ul class="stack">
+          <li><b>Files</b>index.html — 442 lines, style.css — 478, script.js — 331. No frameworks, no bundler, no font downloads.</li>
+          <li><b>Themes</b>Dark by default and light; the toggle in the header remembers the choice.</li>
+          <li><b>Navigation</b>A reading progress bar, the current section highlighted in the menu and a back-to-top button.</li>
+          <li><b>Responsive</b>Two breakpoints, 900 and 720px; on narrow screens the menu hides behind a ☰ button. With “reduce motion” on, animations are switched off.</li>
+        </ul>
+        <div class="shot-row shot-row--two">
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Enlarge: CSS demo">
+              <span class="frame__bar" translate="no">…/html-css-js-basics/#css</span>
+              <img src="../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440-800.jpg" srcset="../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440-800.jpg 800w, ../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Live CSS demo: a round, rotated block with a gradient and the generated .box code below it" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Enlarge: sandbox">
+              <span class="frame__bar" translate="no">…/html-css-js-basics/#sandbox</span>
+              <img src="../../assets/img/cases/html-css-js-basics/bs-sandbox-1440-800.jpg" srcset="../../assets/img/cases/html-css-js-basics/bs-sandbox-1440-800.jpg 800w, ../../assets/img/cases/html-css-js-basics/bs-sandbox-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Sandbox: an editor with HTML, CSS and JS tabs on the left and a live preview with a button on the right" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="decisions">
+      <div class="case-block__label"><p class="kicker">03</p><h2 id="decisions">Decisions worth a look</h2></div>
+      <div class="case-block__content">
+        <ul class="decisions">
+          <li class="decision">
+            <h3>Each technology has its own colour</h3>
+            <p>HTML is orange <b>#e8622c</b>, CSS is blue <b>#3a8ee0</b>, JavaScript is yellow <b>#ecc72c</b>. These three variables colour the code highlighting, the section cards, the column headers in the comparison table and the progress bar at the top — so the colour alone tells you which technology you’re looking at.</p>
+            <ul class="evidence" aria-label="Code">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/style.css#L12-L14" target="_blank" rel="noopener"><code translate="no">style.css:12–14</code> variables ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/style.css#L169-L171" target="_blank" rel="noopener"><code translate="no">:169–171</code> cards ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>The sandbox builds a page inside an iframe</h3>
+            <p>The three fields — HTML, CSS and JS — are joined into one document and loaded into an <b>iframe</b> via <b>srcdoc</b>. The preview updates 350 ms after the last keystroke rather than on every character. A <b>window.onerror</b> handler is injected into the page, so an error in the visitor’s code shows up right in the preview instead of getting lost in the console. The Tab key in the editor inserts two spaces.</p>
+            <ul class="evidence" aria-label="Code">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L148-L244" target="_blank" rel="noopener"><code translate="no">script.js:148–244</code> sandbox ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>The demo writes its own CSS</h3>
+            <p>The “Round”, “Gradient”, “Rotate” and “Shadow” buttons toggle properties on a block, and the resulting code is assembled right below it. Active properties are kept in a <b>Map</b>, so the order of lines in the code matches the order of clicks, and “Reset” returns both the block and the code to their initial state.</p>
+            <ul class="evidence" aria-label="Code">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L92-L128" target="_blank" rel="noopener"><code translate="no">script.js:92–128</code> ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>It works even when opened from disk</h3>
+            <p>When a page is opened via <b>file://</b>, some browser features aren’t available. The theme is saved to <b>localStorage</b> inside try/catch — if storage is blocked, the choice simply isn’t remembered and nothing breaks. The “Copy” button tries the <b>Clipboard API</b> and, without a secure context, copies through a hidden text field.</p>
+            <ul class="evidence" aria-label="Code">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L8-L28" target="_blank" rel="noopener"><code translate="no">script.js:8–28</code> theme ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L61-L90" target="_blank" rel="noopener"><code translate="no">:61–90</code> copying ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>The quiz is built from data</h3>
+            <p>The questions are an array of objects with options, the index of the right answer and an explanation; the script builds the cards from it. After an answer the options lock, the right one is highlighted and the explanation appears; after the fifth question the score is shown and the page scrolls smoothly to it.</p>
+            <ul class="evidence" aria-label="Code">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L246-L331" target="_blank" rel="noopener"><code translate="no">script.js:246–331</code> ↗</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="limits">
+          <h3>What’s worth improving</h3>
+          <ul>
+            <li>In all five quiz questions the right answer is the second option, so the quiz can be passed without reading.</li>
+            <li>Tab in the sandbox editor inserts indentation, so keyboard users can’t leave the field with the Tab key.</li>
+            <li>The ☰ menu button doesn’t tell screen readers whether the menu is open: it has no <code translate="no">aria-expanded</code>.</li>
+            <li>The back-to-top button scrolls smoothly even with “reduce motion” on: the smoothness is set in the script, and the CSS setting doesn’t affect it.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="verify">
+      <div class="case-block__label"><p class="kicker">04</p><h2 id="verify">How to check</h2></div>
+      <div class="case-block__content">
+        <ul class="checklist">
+          <li>Edit the code in the sandbox and watch the preview <a href="https://strangehul1-design.github.io/html-css-js-basics/#sandbox" target="_blank" rel="noopener">sandbox ↗</a></li>
+          <li>Take the five-question quiz <a href="https://strangehul1-design.github.io/html-css-js-basics/#quiz" target="_blank" rel="noopener">quiz ↗</a></li>
+          <li>Download the three files and open index.html from disk <a href="https://github.com/strangehul1-design/html-css-js-basics" target="_blank" rel="noopener">GitHub ↗</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case-nav reveal" aria-label="Other case studies">
+      <a href="../pulse/" rel="prev"><small>← Case study 03</small><strong>PULSE</strong></a>
+      <a href="../big-portfolio/" rel="next"><small>Case study 01 →</small><strong>Web Chef Portfolio</strong></a>
+    </nav>
+  </div>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="kicker reveal">Get in touch</p>
+      <h2 class="contact__title reveal d1" id="contact-title">Got a <em>project?</em><br>Drop me a line.</h2>
+      <ul class="contact__list reveal d2">
+        <li><a class="contact__item" href="https://t.me/tacokinggl1"><span class="contact__label">Telegram</span><span class="contact__value">@tacokinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">VK</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="mailto:digitalgl1@mail.ru"><span class="contact__label">Email</span><span class="contact__value">digitalgl1@mail.ru</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+      </ul>
+      <footer class="contact__foot">
+        <span>DIGITAL FOR BUSINESS · ARSENY ASYANOV</span>
+        <span>© 2026</span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+  <div class="lb-top">
+    <p class="lb-title" id="lb-title"></p>
+    <p class="lb-counter" aria-live="polite"></p>
+    <button class="lb-close" type="button" aria-label="Close">×</button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous screenshot">←</button>
+    <div class="lb-viewport"><div class="lb-track"><img class="lb-img" alt="" decoding="async"></div></div>
+    <button class="lb-nav lb-next" type="button" aria-label="Next screenshot">→</button>
+  </div>
+  <p class="lb-caption"></p>
+  <div class="lb-dots"></div>
+</dialog>
+
+<script type="application/json" id="gallery-data">
+{"shots":{"title":"Three Pillars of the Web","images":[
+ {"src":"../../assets/img/cases/html-css-js-basics/bs-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"First screen, 1440px"},
+ {"src":"../../assets/img/cases/html-css-js-basics/m-bs-hero","w":1179,"h":1977,"widths":[393,786],"caption":"First screen on a phone, 393px"},
+ {"src":"../../assets/img/cases/html-css-js-basics/m-bs-sandbox","w":1179,"h":1977,"widths":[393,786],"caption":"Sandbox on a phone"},
+ {"src":"../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440","w":1440,"h":900,"widths":[800,1440],"caption":"CSS demo: buttons and the resulting code"},
+ {"src":"../../assets/img/cases/html-css-js-basics/bs-sandbox-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Sandbox: editor and live preview"},
+ {"src":"../../assets/img/cases/html-css-js-basics/bs-quiz-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Mini quiz: answers with explanations"},
+ {"src":"../../assets/img/cases/html-css-js-basics/bs-table-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Comparison table of the three technologies"}
+]}}</script>
+</body>
+</html>

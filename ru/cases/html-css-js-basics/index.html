@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Три кита веба — разбор · Арсений Асянов</title>
+<meta name="description" content="Разбор учебного сайта про HTML, CSS и JavaScript: структура, песочница с живым превью в iframe, демонстрации, тест, работа с диска без зависимостей и что стоит доработать.">
+<meta name="theme-color" content="#E9EDF3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Три кита веба — разбор">
+<meta property="og:image" content="https://strangehul1-design.github.io/web-chef-portfolio/assets/img/cases/html-css-js-basics/bs-hero-1440-1440.jpg">
+<link rel="canonical" href="https://strangehul1-design.github.io/web-chef-portfolio/ru/cases/html-css-js-basics/">
+<link rel="alternate" hreflang="en" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/html-css-js-basics/">
+<link rel="alternate" hreflang="ru" href="https://strangehul1-design.github.io/web-chef-portfolio/ru/cases/html-css-js-basics/">
+<link rel="alternate" hreflang="x-default" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/html-css-js-basics/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E9EDF3'/%3E%3Cg fill='%230B1220'%3E%3Ccircle cx='18' cy='18' r='4'/%3E%3Ccircle cx='32' cy='18' r='4'/%3E%3Ccircle cx='46' cy='18' r='4'/%3E%3Ccircle cx='18' cy='32' r='4'/%3E%3Ccircle cx='46' cy='32' r='4'/%3E%3Ccircle cx='18' cy='46' r='4'/%3E%3Ccircle cx='32' cy='46' r='4'/%3E%3Ccircle cx='46' cy='46' r='4'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%232F5BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500&family=Unbounded:wght@600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/case.css">
+<script>document.documentElement.className = 'js';</script>
+<script src="../../../assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">К разбору</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" translate="no"><span>DIGITAL ДЛЯ БИЗНЕСА</span><span class="sep"> · </span><span>АРСЕНИЙ АСЯНОВ</span></a>
+    <div class="site-header__right">
+      <nav aria-label="Разделы">
+        <ul class="site-nav">
+          <li><a href="../../#works">Работы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Язык">
+        <a class="lang-switch__opt" href="../../../cases/html-css-js-basics/" hreflang="en" lang="en" data-lang-switch aria-label="English version">EN</a>
+        <span class="lang-switch__opt" aria-current="true">RU</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap case-hero">
+    <div class="case-head reveal">
+      <span class="case-num" aria-hidden="true">04</span>
+      <div class="case-title-wrap">
+        <p class="kicker">Разбор · Учебный сайт</p>
+        <h1 class="case-title">Три кита веба</h1>
+      </div>
+    </div>
+    <p class="case-lead reveal d1">Учебный одностраничник о трёх технологиях, из которых сделан любой сайт: что такое HTML, CSS и JavaScript, чем они отличаются и как работают вместе. Собран ровно из этих трёх технологий — с живыми демонстрациями, песочницей для кода и мини-тестом.</p>
+    <dl class="case-facts reveal d2">
+      <div><dt>Тип</dt><dd>Учебный сайт, личный проект</dd></div>
+      <div><dt>Сроки</dt><dd>9 сентября 2026, 1&nbsp;коммит</dd></div>
+      <div><dt>Стек</dt><dd>HTML, CSS, JS в трёх файлах без зависимостей · 1251&nbsp;строка</dd></div>
+      <div><dt>Ссылки</dt><dd><a href="https://strangehul1-design.github.io/html-css-js-basics/" target="_blank" rel="noopener">живая страница&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/html-css-js-basics" target="_blank" rel="noopener">код на GitHub&nbsp;↗</a></dd></div>
+    </dl>
+    <div class="shot-row reveal d3">
+      <div>
+        <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Увеличить: первый экран на компьютере">
+          <span class="frame__bar" translate="no">strangehul1-design.github.io/html-css-js-basics/</span>
+          <img src="../../../assets/img/cases/html-css-js-basics/bs-hero-1440-800.jpg" srcset="../../../assets/img/cases/html-css-js-basics/bs-hero-1440-800.jpg 800w, ../../../assets/img/cases/html-css-js-basics/bs-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="Первый экран на тёмной теме: заголовок «HTML, CSS и JavaScript — из чего сделан любой сайт» и три карточки: HTML — скелет, CSS — внешность, JavaScript — поведение" fetchpriority="high">
+        </button>
+        <p class="shot-caption">Первый экран, ширина 1440px.</p>
+      </div>
+      <div>
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="1" aria-label="Увеличить: первый экран на телефоне">
+          <img src="../../../assets/img/cases/html-css-js-basics/m-bs-hero-393.jpg" srcset="../../../assets/img/cases/html-css-js-basics/m-bs-hero-393.jpg 393w, ../../../assets/img/cases/html-css-js-basics/m-bs-hero-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Первый экран на телефоне шириной 393px" loading="lazy">
+        </button>
+        <p class="shot-caption">Телефон, 393px.</p>
+      </div>
+      <div>
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="2" aria-label="Увеличить: песочница на телефоне">
+          <img src="../../../assets/img/cases/html-css-js-basics/m-bs-sandbox-393.jpg" srcset="../../../assets/img/cases/html-css-js-basics/m-bs-sandbox-393.jpg 393w, ../../../assets/img/cases/html-css-js-basics/m-bs-sandbox-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Песочница на телефоне: вкладки HTML, CSS, JS и код" loading="lazy">
+        </button>
+        <p class="shot-caption">Песочница на телефоне.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap case-body">
+    <section class="case-block reveal" aria-labelledby="why">
+      <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Для кого и зачем</h2></div>
+      <div class="case-block__content prose">
+        <p>Страница для тех, кто только начинает: объяснить основы фронтенда за один вечер простым языком и сразу дать попробовать самому. Вместо сухих определений — аналогия (HTML — скелет, CSS — одежда, JavaScript — умение двигаться), примеры кода с кнопкой «Копировать» и демонстрации, где результат виден сразу.</p>
+        <p>Заодно это показ самого подхода: никаких фреймворков, сборщиков и веб-шрифтов — три файла, которые открываются двойным кликом и работают без интернета.</p>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="what">
+      <div class="case-block__label"><p class="kicker">02</p><h2 id="what">Что сделано</h2></div>
+      <div class="case-block__content">
+        <ol class="structure" aria-label="Разделы страницы">
+          <li><b>Первый экран</b><span>«HTML, CSS и JavaScript — из чего сделан любой сайт» и три карточки-аналогии с примером кода</span></li>
+          <li><b>HTML</b><span>теги и атрибуты, скелет документа, семантическая вёрстка</span></li>
+          <li><b>CSS</b><span>селекторы, блочная модель, каскад и специфичность; живая демонстрация на кнопках</span></li>
+          <li><b>JavaScript</b><span>переменные, функции, условия, циклы, DOM и события; счётчик как пример</span></li>
+          <li><b>Как они работают вместе</b><span>что происходит, пока страница грузится, и таблица сравнения трёх технологий</span></li>
+          <li><b>Песочница</b><span>редактор с вкладками HTML / CSS / JS и живым превью</span></li>
+          <li><b>Мини-тест</b><span>пять вопросов с пояснениями и итогом</span></li>
+          <li><b>Маршрут новичка</b><span>с чего начинать и что читать дальше</span></li>
+        </ol>
+        <ul class="stack">
+          <li><b>Файлы</b>index.html — 442 строки, style.css — 478, script.js — 331. Ни фреймворков, ни сборщика, ни подключаемых шрифтов.</li>
+          <li><b>Темы</b>Тёмная по умолчанию и светлая; переключатель в шапке запоминает выбор.</li>
+          <li><b>Навигация</b>Полоса прогресса чтения, подсветка текущего раздела в меню и кнопка «наверх».</li>
+          <li><b>Адаптив</b>Две точки перелома — 900 и 720px; на узком экране меню прячется за кнопку ☰. При «уменьшить движение» анимации выключаются.</li>
+        </ul>
+        <div class="shot-row shot-row--two">
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Увеличить: демонстрация CSS">
+              <span class="frame__bar" translate="no">…/html-css-js-basics/#css</span>
+              <img src="../../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440-800.jpg" srcset="../../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440-800.jpg 800w, ../../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Живая демонстрация CSS: круглый повёрнутый блок с градиентом и под ним сгенерированный код .box" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Увеличить: песочница">
+              <span class="frame__bar" translate="no">…/html-css-js-basics/#sandbox</span>
+              <img src="../../../assets/img/cases/html-css-js-basics/bs-sandbox-1440-800.jpg" srcset="../../../assets/img/cases/html-css-js-basics/bs-sandbox-1440-800.jpg 800w, ../../../assets/img/cases/html-css-js-basics/bs-sandbox-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Песочница: слева редактор с вкладками HTML, CSS, JS, справа живое превью с кнопкой «Нажми меня»" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="decisions">
+      <div class="case-block__label"><p class="kicker">03</p><h2 id="decisions">Решения, на которые стоит посмотреть</h2></div>
+      <div class="case-block__content">
+        <ul class="decisions">
+          <li class="decision">
+            <h3>У каждой технологии свой цвет</h3>
+            <p>HTML — оранжевый <b>#e8622c</b>, CSS — синий <b>#3a8ee0</b>, JavaScript — жёлтый <b>#ecc72c</b>. Эти три переменные красят подсветку кода, карточки разделов, заголовки колонок в таблице сравнения и полосу прогресса вверху — по цвету сразу понятно, о какой технологии речь.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/style.css#L12-L14" target="_blank" rel="noopener"><code translate="no">style.css:12–14</code> переменные ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/style.css#L169-L171" target="_blank" rel="noopener"><code translate="no">:169–171</code> карточки ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Песочница собирает страницу в iframe</h3>
+            <p>Три поля — HTML, CSS и JS — склеиваются в один документ и попадают в <b>iframe</b> через <b>srcdoc</b>. Превью обновляется через 350 мс после последнего нажатия, а не на каждый символ. В собранную страницу подмешивается <b>window.onerror</b>, поэтому ошибка в коде посетителя показывается прямо в превью, а не теряется в консоли. Клавиша Tab в редакторе вставляет два пробела.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L148-L244" target="_blank" rel="noopener"><code translate="no">script.js:148–244</code> песочница ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Демонстрация сама пишет CSS</h3>
+            <p>Кнопки «Круглый», «Градиент», «Повернуть» и «Тень» включают и выключают свойства у блока, а под ним сразу собирается получившийся код. Включённые свойства хранятся в <b>Map</b>, поэтому порядок строк в коде совпадает с порядком нажатий, а «Сбросить» возвращает блок и код в исходное состояние.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L92-L128" target="_blank" rel="noopener"><code translate="no">script.js:92–128</code> ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Работает, даже если открыть файл с диска</h3>
+            <p>При открытии через <b>file://</b> часть браузерных возможностей недоступна. Тема сохраняется в <b>localStorage</b> внутри try/catch — если хранилище запрещено, выбор просто не запомнится, а страница не сломается. Кнопка «Копировать» пробует <b>Clipboard API</b>, а без защищённого соединения копирует через скрытое поле ввода.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L8-L28" target="_blank" rel="noopener"><code translate="no">script.js:8–28</code> тема ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L61-L90" target="_blank" rel="noopener"><code translate="no">:61–90</code> копирование ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Тест собирается из данных</h3>
+            <p>Вопросы — массив объектов с вариантами, номером правильного ответа и пояснением, карточки строит скрипт. После ответа варианты блокируются, правильный подсвечивается и появляется пояснение, а после пятого вопроса — итог со счётом и плавная прокрутка к нему.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/html-css-js-basics/blob/main/script.js#L246-L331" target="_blank" rel="noopener"><code translate="no">script.js:246–331</code> ↗</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="limits">
+          <h3>Что стоит доработать</h3>
+          <ul>
+            <li>Во всех пяти вопросах теста правильный ответ — второй вариант, поэтому тест можно пройти, не читая.</li>
+            <li>Tab в редакторе песочницы вставляет отступ, и с клавиатуры из поля не выйти клавишей Tab.</li>
+            <li>Кнопка меню ☰ не сообщает экранным дикторам, открыто ли меню: у неё нет <code translate="no">aria-expanded</code>.</li>
+            <li>Кнопка «наверх» прокручивает плавно даже при «уменьшить движение»: плавность задана в скрипте, и CSS-настройка на неё не влияет.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="verify">
+      <div class="case-block__label"><p class="kicker">04</p><h2 id="verify">Как проверить</h2></div>
+      <div class="case-block__content">
+        <ul class="checklist">
+          <li>Поменять код в песочнице и посмотреть превью <a href="https://strangehul1-design.github.io/html-css-js-basics/#sandbox" target="_blank" rel="noopener">песочница ↗</a></li>
+          <li>Пройти мини-тест из пяти вопросов <a href="https://strangehul1-design.github.io/html-css-js-basics/#quiz" target="_blank" rel="noopener">тест ↗</a></li>
+          <li>Скачать три файла и открыть index.html с диска <a href="https://github.com/strangehul1-design/html-css-js-basics" target="_blank" rel="noopener">GitHub ↗</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case-nav reveal" aria-label="Другие разборы">
+      <a href="../pulse/" rel="prev"><small>← Разбор 03</small><strong>PULSE</strong></a>
+      <a href="../big-portfolio/" rel="next"><small>Разбор 01 →</small><strong>Web Chef Portfolio</strong></a>
+    </nav>
+  </div>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="kicker reveal">Связь со мной</p>
+      <h2 class="contact__title reveal d1" id="contact-title">Есть <em>задача?</em><br>Пиши.</h2>
+      <ul class="contact__list reveal d2">
+        <li><a class="contact__item" href="https://t.me/tacokinggl1"><span class="contact__label">Telegram</span><span class="contact__value">@tacokinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">ВКонтакте</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="mailto:digitalgl1@mail.ru"><span class="contact__label">Email</span><span class="contact__value">digitalgl1@mail.ru</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+      </ul>
+      <footer class="contact__foot">
+        <span>DIGITAL ДЛЯ БИЗНЕСА · АРСЕНИЙ АСЯНОВ</span>
+        <span>© 2026</span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+  <div class="lb-top">
+    <p class="lb-title" id="lb-title"></p>
+    <p class="lb-counter" aria-live="polite"></p>
+    <button class="lb-close" type="button" aria-label="Закрыть">×</button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" type="button" aria-label="Предыдущий скриншот">←</button>
+    <div class="lb-viewport"><div class="lb-track"><img class="lb-img" alt="" decoding="async"></div></div>
+    <button class="lb-nav lb-next" type="button" aria-label="Следующий скриншот">→</button>
+  </div>
+  <p class="lb-caption"></p>
+  <div class="lb-dots"></div>
+</dialog>
+
+<script type="application/json" id="gallery-data">
+{"shots":{"title":"Три кита веба","images":[
+ {"src":"../../../assets/img/cases/html-css-js-basics/bs-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Первый экран, 1440px"},
+ {"src":"../../../assets/img/cases/html-css-js-basics/m-bs-hero","w":1179,"h":1977,"widths":[393,786],"caption":"Первый экран на телефоне, 393px"},
+ {"src":"../../../assets/img/cases/html-css-js-basics/m-bs-sandbox","w":1179,"h":1977,"widths":[393,786],"caption":"Песочница на телефоне"},
+ {"src":"../../../assets/img/cases/html-css-js-basics/bs-cssdemo-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Демонстрация CSS: кнопки и получившийся код"},
+ {"src":"../../../assets/img/cases/html-css-js-basics/bs-sandbox-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Песочница: редактор и живое превью"},
+ {"src":"../../../assets/img/cases/html-css-js-basics/bs-quiz-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Мини-тест: ответы с пояснениями"},
+ {"src":"../../../assets/img/cases/html-css-js-basics/bs-table-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Таблица сравнения трёх технологий"}
+]}}</script>
+</body>
+</html>
