@@ -1,0 +1,12 @@
+{
+  "name": "web-chef-portfolio",
+  "private": true,
+  "description": "Портфолио Арсения Асянова. Сайт статический, сборка нужна только для файла three.js под сцену на обложке.",
+  "scripts": {
+    "build:three": "esbuild tools/three-hero-entry.js --bundle --format=esm --minify --legal-comments=eof --target=es2020 --outfile=assets/vendor/three-hero.min.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "three": "0.186.0"
+  }
+}
