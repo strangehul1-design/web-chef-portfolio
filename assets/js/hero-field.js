@@ -615,7 +615,7 @@ class FieldScene {
     const paint = () => {
       if (this.dead) return;
       const s = this.stats();
-      box.textContent = `${s.fps} fps · ${s.frameMs} ms\n${s.tier} · dpr ${s.dpr} · ${s.canvas.join('×')}\n${s.points} точек · ${s.drawCalls} вызов`;
+      box.textContent = `${s.fps} fps · ${s.frameMs} ms\n${s.tier} · dpr ${s.dpr} · ${s.canvas.join('×')}\n${s.points} points · ${s.drawCalls} draw call`;
     };
     this.debugTimer = setInterval(paint, 500);
     paint();

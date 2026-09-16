@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru" class="no-js">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PULSE — разбор концепта · Арсений Асянов</title>
-<meta name="description" content="Разбор концепта сайта фитнес-студии PULSE: структура, бегущая строка и линии сетки на чистом CSS, контурная типографика, адаптивность и честный список того, чего в демо нет.">
+<title>PULSE — concept case study · Arseny Asyanov</title>
+<meta name="description" content="Case study of the PULSE fitness studio website concept: structure, a CSS-only ticker and grid lines, outlined typography, responsiveness and an honest list of what the demo doesn’t have.">
 <meta name="theme-color" content="#E9EDF3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PULSE — разбор концепта">
+<meta property="og:title" content="PULSE — concept case study">
 <meta property="og:image" content="https://strangehul1-design.github.io/web-chef-portfolio/assets/img/cases/pulse/pulse-hero-1440-1440.jpg">
+<link rel="canonical" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/pulse/">
+<link rel="alternate" hreflang="en" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/pulse/">
+<link rel="alternate" hreflang="ru" href="https://strangehul1-design.github.io/web-chef-portfolio/ru/cases/pulse/">
+<link rel="alternate" hreflang="x-default" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/pulse/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E9EDF3'/%3E%3Cg fill='%230B1220'%3E%3Ccircle cx='18' cy='18' r='4'/%3E%3Ccircle cx='32' cy='18' r='4'/%3E%3Ccircle cx='46' cy='18' r='4'/%3E%3Ccircle cx='18' cy='32' r='4'/%3E%3Ccircle cx='46' cy='32' r='4'/%3E%3Ccircle cx='18' cy='46' r='4'/%3E%3Ccircle cx='32' cy='46' r='4'/%3E%3Ccircle cx='46' cy='46' r='4'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%232F5BFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,17 +25,23 @@
 <script src="../../assets/js/site.js" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main">К разбору</a>
+<a class="skip-link" href="#main">Skip to case study</a>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="../../" translate="no"><span>WEB CHEF</span><span class="sep"> · </span><span>АРСЕНИЙ АСЯНОВ</span></a>
-    <nav aria-label="Разделы">
-      <ul class="site-nav">
-        <li><a href="../../#works">Работы</a></li>
-        <li><a href="#contact">Контакты</a></li>
-      </ul>
-    </nav>
+    <a class="brand" href="../../" translate="no"><span>WEB CHEF</span><span class="sep"> · </span><span>ARSENY ASYANOV</span></a>
+    <div class="site-header__right">
+      <nav aria-label="Sections">
+        <ul class="site-nav">
+          <li><a href="../../#works">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <span class="lang-switch__opt" aria-current="true">EN</span>
+        <a class="lang-switch__opt" href="../../ru/cases/pulse/" hreflang="ru" lang="ru" data-lang-switch aria-label="Русская версия">RU</a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -38,74 +50,74 @@
     <div class="case-head reveal">
       <span class="case-num" aria-hidden="true">03</span>
       <div class="case-title-wrap">
-        <p class="kicker">Разбор · Концепт сайта фитнес-студии</p>
+        <p class="kicker">Case study · Fitness studio website concept</p>
         <h1 class="case-title">PULSE</h1>
       </div>
     </div>
-    <p class="case-lead reveal d1">Лендинг студии силовых тренировок в небольших группах. Один из семи демо-сайтов, которые показывают разные визуальные направления; здесь — жёсткий спортивный характер: чёрный фон, крупный Archivo Black и акцент цвета «volt».</p>
-    <p class="flag reveal d1">Концепт: студия, тренеры, адрес и цифры на странице вымышлены. Это демо для портфолио, а не сайт реального клиента.</p>
+    <p class="case-lead reveal d1">A landing page for a small-group strength training studio. One of seven demo sites that explore different visual directions; this one has a hard, sporty character: a black background, large Archivo Black type and a “volt” accent colour.</p>
+    <p class="flag reveal d1">Concept: the studio, coaches, address and numbers on the page are fictional. This is a portfolio demo, not a real client’s site.</p>
     <dl class="case-facts reveal d2">
-      <div><dt>Тип</dt><dd>Концепт, одностраничный лендинг</dd></div>
-      <div><dt>Сроки</dt><dd>20 августа 2026, одним коммитом вместе с шестью другими демо</dd></div>
-      <div><dt>Стек</dt><dd>HTML и CSS в одном файле, без JavaScript · 193&nbsp;строки, 10,5&nbsp;КБ</dd></div>
-      <div><dt>Ссылки</dt><dd><a href="https://strangehul1-design.github.io/web-studio-portfolio/fitness.html" target="_blank" rel="noopener">живая страница&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html" target="_blank" rel="noopener">код на GitHub&nbsp;↗</a></dd></div>
+      <div><dt>Type</dt><dd>Concept, one-page landing</dd></div>
+      <div><dt>Date</dt><dd>August 20, 2026, in one commit together with six other demos</dd></div>
+      <div><dt>Stack</dt><dd>HTML and CSS in one file, no JavaScript · 193&nbsp;lines, 10.5&nbsp;KB</dd></div>
+      <div><dt>Links</dt><dd><a href="https://strangehul1-design.github.io/web-studio-portfolio/fitness.html" target="_blank" rel="noopener">live page&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html" target="_blank" rel="noopener">code on GitHub&nbsp;↗</a></dd></div>
     </dl>
     <div class="shot-row reveal d3">
       <div>
-        <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Увеличить: первый экран на компьютере">
+        <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Enlarge: first screen on desktop">
           <span class="frame__bar" translate="no">web-studio-portfolio/fitness.html</span>
-          <img src="../../assets/img/cases/pulse/pulse-hero-1440-800.jpg" srcset="../../assets/img/cases/pulse/pulse-hero-1440-800.jpg 800w, ../../assets/img/cases/pulse/pulse-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="Первый экран PULSE: заголовок «Train like it matters» на чёрном, кнопки «Book Free Trial Class» и «See the Schedule»" fetchpriority="high">
+          <img src="../../assets/img/cases/pulse/pulse-hero-1440-800.jpg" srcset="../../assets/img/cases/pulse/pulse-hero-1440-800.jpg 800w, ../../assets/img/cases/pulse/pulse-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="PULSE first screen: the headline “Train like it matters” on black, “Book Free Trial Class” and “See the Schedule” buttons" fetchpriority="high">
         </button>
-        <p class="shot-caption">Первый экран, ширина 1440px.</p>
+        <p class="shot-caption">First screen, 1440px wide.</p>
       </div>
       <div>
-        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="1" aria-label="Увеличить: первый экран на телефоне">
-          <img src="../../assets/img/cases/pulse/m-pulse-hero-393.jpg" srcset="../../assets/img/cases/pulse/m-pulse-hero-393.jpg 393w, ../../assets/img/cases/pulse/m-pulse-hero-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Первый экран PULSE на телефоне шириной 393px" loading="lazy">
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="1" aria-label="Enlarge: first screen on a phone">
+          <img src="../../assets/img/cases/pulse/m-pulse-hero-393.jpg" srcset="../../assets/img/cases/pulse/m-pulse-hero-393.jpg 393w, ../../assets/img/cases/pulse/m-pulse-hero-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="PULSE first screen on a 393px phone" loading="lazy">
         </button>
-        <p class="shot-caption">Телефон, 393px.</p>
+        <p class="shot-caption">Phone, 393px.</p>
       </div>
       <div>
-        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="2" aria-label="Увеличить: занятия на телефоне">
-          <img src="../../assets/img/cases/pulse/m-pulse-classes-393.jpg" srcset="../../assets/img/cases/pulse/m-pulse-classes-393.jpg 393w, ../../assets/img/cases/pulse/m-pulse-classes-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Раздел занятий на телефоне: карточки в две колонки" loading="lazy">
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="2" aria-label="Enlarge: classes on a phone">
+          <img src="../../assets/img/cases/pulse/m-pulse-classes-393.jpg" srcset="../../assets/img/cases/pulse/m-pulse-classes-393.jpg 393w, ../../assets/img/cases/pulse/m-pulse-classes-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Classes section on a phone: cards in two columns" loading="lazy">
         </button>
-        <p class="shot-caption">Занятия на телефоне: две колонки вместо четырёх.</p>
+        <p class="shot-caption">Classes on a phone: two columns instead of four.</p>
       </div>
     </div>
   </section>
 
   <div class="wrap case-body">
     <section class="case-block reveal" aria-labelledby="why">
-      <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Для кого и зачем</h2></div>
+      <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Who it’s for and why</h2></div>
       <div class="case-block__content prose">
-        <p>Задача концепта — показать, как мог бы выглядеть сайт небольшой студии, которая продаёт не абонементы, а тренировки под присмотром тренера. Страница сразу объясняет формат (в каждой группе не больше 12&nbsp;человек), показывает виды занятий и тренеров и ведёт к бесплатному пробному занятию.</p>
-        <p>PULSE входит в портфолио <strong>web-studio-portfolio</strong> из семи демо — кафе, стоматология, юридическая фирма, фотограф, спа, недвижимость и эта студия. Каждое сделано отдельным HTML-файлом со своим визуальным направлением.</p>
+        <p>The concept shows what a website could look like for a small studio that sells coached training sessions rather than memberships. The page explains the format up front (no more than 12&nbsp;people per group), presents the class types and coaches, and leads to a free trial class.</p>
+        <p>PULSE is part of <strong>web-studio-portfolio</strong>, a set of seven demos — a café, a dental clinic, a law firm, a photographer, a spa, real estate and this studio. Each one is a separate HTML file with its own visual direction.</p>
       </div>
     </section>
 
     <section class="case-block reveal" aria-labelledby="what">
-      <div class="case-block__label"><p class="kicker">02</p><h2 id="what">Что сделано</h2></div>
+      <div class="case-block__label"><p class="kicker">02</p><h2 id="what">What was built</h2></div>
       <div class="case-block__content">
-        <ol class="structure" aria-label="Разделы страницы">
-          <li><b>Шапка</b><span>логотип «PULSE.», разделы и кнопка «Free Trial Class»; прилипает к верху при прокрутке</span></li>
-          <li><b>Первый экран</b><span>«Train like it matters.», слово «matters.» набрано контуром; две кнопки</span></li>
-          <li><b>Бегущая строка</b><span>направления студии на полосе цвета «volt»</span></li>
-          <li><b>Занятия</b><span>четыре карточки — Strength, Conditioning, Mobility, Open Gym — с длительностью и форматом</span></li>
-          <li><b>Цифры</b><span>размер группы, тренеры, занятия в неделю, рейтинг (значения вымышлены)</span></li>
-          <li><b>Тренеры</b><span>три карточки; вместо фотографий — градиенты</span></li>
-          <li><b>Призыв</b><span>«Your first class is on us.»</span></li>
-          <li><b>Подвал</b><span>часы работы и контакты</span></li>
+        <ol class="structure" aria-label="Page sections">
+          <li><b>Header</b><span>the “PULSE.” logo, section links and a “Free Trial Class” button; sticks to the top on scroll</span></li>
+          <li><b>First screen</b><span>“Train like it matters.” with “matters.” set in outline; two buttons</span></li>
+          <li><b>Ticker</b><span>the studio’s disciplines on a volt-coloured strip</span></li>
+          <li><b>Classes</b><span>four cards — Strength, Conditioning, Mobility, Open Gym — with duration and format</span></li>
+          <li><b>Numbers</b><span>group size, coaches, classes per week, rating (the values are fictional)</span></li>
+          <li><b>Coaches</b><span>three cards with gradients instead of photos</span></li>
+          <li><b>Call to action</b><span>“Your first class is on us.”</span></li>
+          <li><b>Footer</b><span>opening hours and contacts</span></li>
         </ol>
         <div class="shot-row shot-row--two">
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Увеличить: занятия на компьютере">
+            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Enlarge: classes on desktop">
               <span class="frame__bar" translate="no">fitness.html#classes</span>
-              <img src="../../assets/img/cases/pulse/pulse-classes-1440-800.jpg" srcset="../../assets/img/cases/pulse/pulse-classes-1440-800.jpg 800w, ../../assets/img/cases/pulse/pulse-classes-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Раздел «Pick your session.»: четыре карточки занятий, разделённые тонкими линиями" loading="lazy">
+              <img src="../../assets/img/cases/pulse/pulse-classes-1440-800.jpg" srcset="../../assets/img/cases/pulse/pulse-classes-1440-800.jpg 800w, ../../assets/img/cases/pulse/pulse-classes-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="“Pick your session.” section: four class cards separated by thin lines" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Увеличить: тренеры на компьютере">
+            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Enlarge: coaches on desktop">
               <span class="frame__bar" translate="no">fitness.html#coaches</span>
-              <img src="../../assets/img/cases/pulse/pulse-coaches-1440-800.jpg" srcset="../../assets/img/cases/pulse/pulse-coaches-1440-800.jpg 800w, ../../assets/img/cases/pulse/pulse-coaches-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Раздел «Your coaches.»: три карточки тренеров с градиентами вместо фото" loading="lazy">
+              <img src="../../assets/img/cases/pulse/pulse-coaches-1440-800.jpg" srcset="../../assets/img/cases/pulse/pulse-coaches-1440-800.jpg 800w, ../../assets/img/cases/pulse/pulse-coaches-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="“Your coaches.” section: three coach cards with gradients instead of photos" loading="lazy">
             </button>
           </div>
         </div>
@@ -113,87 +125,86 @@
     </section>
 
     <section class="case-block reveal" aria-labelledby="decisions">
-      <div class="case-block__label"><p class="kicker">03</p><h2 id="decisions">Решения, на которые стоит посмотреть</h2></div>
+      <div class="case-block__label"><p class="kicker">03</p><h2 id="decisions">Decisions worth a look</h2></div>
       <div class="case-block__content">
         <ul class="decisions">
           <li class="decision">
-            <h3>Бегущая строка без JavaScript</h3>
-            <p>В полосе два одинаковых блока текста подряд, а вся дорожка сдвигается на <b>−50%</b> своей ширины за 22 секунды с постоянной скоростью и начинает заново. В момент перезапуска на месте первого блока стоит точно такой же второй, поэтому шва не видно. Двигается только <b>transform</b> — браузеру не нужно пересчитывать раскладку на каждом кадре.</p>
-            <ul class="evidence" aria-label="Код">
-              <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L41-L44" target="_blank" rel="noopener"><code translate="no">fitness.html:41–44</code> стили ↗</a></li>
-              <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L118-L123" target="_blank" rel="noopener"><code translate="no">:118–123</code> разметка ↗</a></li>
+            <h3>A ticker without JavaScript</h3>
+            <p>The strip holds two identical text blocks in a row, and the whole track shifts by <b>−50%</b> of its width over 22 seconds at a constant speed, then starts over. At the moment it restarts, an identical second block sits exactly where the first one was, so there’s no visible seam. Only <b>transform</b> is animated — the browser doesn’t have to recalculate layout on every frame.</p>
+            <ul class="evidence" aria-label="Code">
+              <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L41-L44" target="_blank" rel="noopener"><code translate="no">fitness.html:41–44</code> styles ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L118-L123" target="_blank" rel="noopener"><code translate="no">:118–123</code> markup ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Линии сетки — это зазор, а не рамки</h3>
-            <p>У сетки занятий серый фон <b>#262626</b> и зазор между ячейками в 1px, а сами карточки чёрные. Сквозь зазоры проступает фон — получаются ровные тонкие разделители без <b>border</b> у карточек и без удвоенных линий на стыках. При наведении карточка светлеет до <b>#1A1A1A</b>.</p>
-            <ul class="evidence" aria-label="Код">
+            <h3>Grid lines are gaps, not borders</h3>
+            <p>The classes grid has a grey <b>#262626</b> background and a 1px gap between cells, while the cards themselves are black. The background shows through the gaps — giving clean, thin dividers without card <b>border</b>s and without doubled lines where cards meet. On hover a card lightens to <b>#1A1A1A</b>.</p>
+            <ul class="evidence" aria-label="Code">
               <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L51-L53" target="_blank" rel="noopener"><code translate="no">fitness.html:51–53</code> ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Контурное слово и плотная строка в заголовке</h3>
-            <p>«matters.» — прозрачный текст с обводкой <b>-webkit-text-stroke: 2px</b>. Размер заголовка тянется от 52 до 124px через <b>clamp(52px, 9vw, 124px)</b>, межстрочный интервал 0.86 — строки почти касаются, и заголовок читается одним тяжёлым блоком.</p>
-            <ul class="evidence" aria-label="Код">
+            <h3>An outlined word and a tight headline</h3>
+            <p>“matters.” is transparent text with a <b>-webkit-text-stroke: 2px</b> outline. The headline scales from 52 to 124px via <b>clamp(52px, 9vw, 124px)</b> with a line height of 0.86 — the lines almost touch, and the headline reads as one heavy block.</p>
+            <ul class="evidence" aria-label="Code">
               <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L34-L35" target="_blank" rel="noopener"><code translate="no">fitness.html:34–35</code> ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Шапка поверх контента</h3>
-            <p>Шапка прилипает к верху через <b>position: sticky</b> и остаётся полупрозрачной: фон <b>rgba(10, 10, 10, .92)</b> и размытие <b>backdrop-filter: blur(6px)</b>. Контент под ней при прокрутке угадывается, но не мешает читать меню.</p>
-            <ul class="evidence" aria-label="Код">
+            <h3>A header over the content</h3>
+            <p>The header sticks to the top with <b>position: sticky</b> and stays translucent: an <b>rgba(10, 10, 10, .92)</b> background and <b>backdrop-filter: blur(6px)</b>. Content scrolling underneath is hinted at but doesn’t get in the way of the menu.</p>
+            <ul class="evidence" aria-label="Code">
               <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L23" target="_blank" rel="noopener"><code translate="no">fitness.html:23</code> ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Адаптивность с одной точкой перелома</h3>
-            <p>До ширины 900px занятия встают в две колонки вместо четырёх, цифры — в две, тренеры — в одну, а меню разделов скрывается. Остальное подстраивается без медиазапросов: размеры заголовков заданы через <b>clamp()</b>, ряды кнопок и шапки разделов переносятся через <b>flex-wrap</b>.</p>
-            <ul class="evidence" aria-label="Код">
+            <h3>Responsive with a single breakpoint</h3>
+            <p>Below 900px, the classes go into two columns instead of four, the numbers into two, the coaches into one, and the section menu is hidden. Everything else adapts without media queries: heading sizes use <b>clamp()</b>, and button rows and section headers wrap with <b>flex-wrap</b>.</p>
+            <ul class="evidence" aria-label="Code">
               <li><a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html#L82-L89" target="_blank" rel="noopener"><code translate="no">fitness.html:82–89</code> ↗</a></li>
             </ul>
           </li>
         </ul>
         <div class="limits">
-          <h3>Чего в концепте нет</h3>
+          <h3>What the concept doesn’t have</h3>
           <ul>
-            <li>Кнопки записи на пробное занятие никуда не ведут — для настоящей студии нужна форма или запись через её сервис.</li>
-            <li>На телефоне меню разделов скрыто, замены ему нет.</li>
-            <li>Бегущая строка не останавливается при системной настройке «уменьшить движение».</li>
-            <li>Фото тренеров и цифры нужно получить у реальной студии.</li>
+            <li>The trial class booking buttons don’t lead anywhere — a real studio would need a form or booking through its own service.</li>
+            <li>On phones the section menu is hidden, with no replacement.</li>
+            <li>The ticker doesn’t stop when the system “reduce motion” setting is on.</li>
+            <li>Coach photos and the numbers would have to come from a real studio.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="case-block reveal" aria-labelledby="verify">
-      <div class="case-block__label"><p class="kicker">04</p><h2 id="verify">Как проверить</h2></div>
+      <div class="case-block__label"><p class="kicker">04</p><h2 id="verify">How to check</h2></div>
       <div class="case-block__content">
         <ul class="checklist">
-          <li>Открыть страницу и сузить окно до ширины телефона <a href="https://strangehul1-design.github.io/web-studio-portfolio/fitness.html" target="_blank" rel="noopener">fitness.html ↗</a></li>
-          <li>Весь код — один файл на 193&nbsp;строки <a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html" target="_blank" rel="noopener">GitHub ↗</a></li>
-          <li>Остальные шесть демо той же серии <a href="https://strangehul1-design.github.io/web-studio-portfolio/" target="_blank" rel="noopener">web-studio-portfolio ↗</a></li>
+          <li>Open the page and narrow the window to phone width <a href="https://strangehul1-design.github.io/web-studio-portfolio/fitness.html" target="_blank" rel="noopener">fitness.html ↗</a></li>
+          <li>All the code is one file of 193&nbsp;lines <a href="https://github.com/strangehul1-design/web-studio-portfolio/blob/main/fitness.html" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li>The other six demos in the same series <a href="https://strangehul1-design.github.io/web-studio-portfolio/" target="_blank" rel="noopener">web-studio-portfolio ↗</a></li>
         </ul>
       </div>
     </section>
 
-    
-    <nav class="case-nav reveal" aria-label="Другие разборы">
-      <a href="../asiyatort/" rel="prev"><small>← Разбор 02</small><strong>«ТОРТ по любви»</strong></a>
-      <a href="../big-portfolio/" rel="next"><small>Разбор 01 →</small><strong>Web Chef Portfolio</strong></a>
+    <nav class="case-nav reveal" aria-label="Other case studies">
+      <a href="../asiyatort/" rel="prev"><small>← Case study 02</small><strong>ТОРТ по любви</strong></a>
+      <a href="../big-portfolio/" rel="next"><small>Case study 01 →</small><strong>Web Chef Portfolio</strong></a>
     </nav>
   </div>
 
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <p class="kicker reveal">Связь со мной</p>
-      <h2 class="contact__title reveal d1" id="contact-title">Есть <em>задача?</em><br>Пиши.</h2>
+      <p class="kicker reveal">Get in touch</p>
+      <h2 class="contact__title reveal d1" id="contact-title">Got a <em>project?</em><br>Drop me a line.</h2>
       <ul class="contact__list reveal d2">
         <li><a class="contact__item" href="https://t.me/tacokinggl1"><span class="contact__label">Telegram</span><span class="contact__value">@tacokinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
-        <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">ВКонтакте</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">VK</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
         <li><a class="contact__item" href="mailto:digitalgl1@mail.ru"><span class="contact__label">Email</span><span class="contact__value">digitalgl1@mail.ru</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
       </ul>
       <footer class="contact__foot">
-        <span>WEB CHEF · АРСЕНИЙ АСЯНОВ</span>
+        <span>WEB CHEF · ARSENY ASYANOV</span>
         <span>© 2026</span>
       </footer>
     </div>
@@ -204,12 +215,12 @@
   <div class="lb-top">
     <p class="lb-title" id="lb-title"></p>
     <p class="lb-counter" aria-live="polite"></p>
-    <button class="lb-close" type="button" aria-label="Закрыть">×</button>
+    <button class="lb-close" type="button" aria-label="Close">×</button>
   </div>
   <div class="lb-stage">
-    <button class="lb-nav lb-prev" type="button" aria-label="Предыдущий скриншот">←</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous screenshot">←</button>
     <div class="lb-viewport"><div class="lb-track"><img class="lb-img" alt="" decoding="async"></div></div>
-    <button class="lb-nav lb-next" type="button" aria-label="Следующий скриншот">→</button>
+    <button class="lb-nav lb-next" type="button" aria-label="Next screenshot">→</button>
   </div>
   <p class="lb-caption"></p>
   <div class="lb-dots"></div>
@@ -217,11 +228,11 @@
 
 <script type="application/json" id="gallery-data">
 {"shots":{"title":"PULSE","images":[
- {"src":"../../assets/img/cases/pulse/pulse-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Первый экран, 1440px"},
- {"src":"../../assets/img/cases/pulse/m-pulse-hero","w":1179,"h":1977,"widths":[393,786],"caption":"Первый экран на телефоне, 393px"},
- {"src":"../../assets/img/cases/pulse/m-pulse-classes","w":1179,"h":1977,"widths":[393,786],"caption":"Занятия на телефоне"},
- {"src":"../../assets/img/cases/pulse/pulse-classes-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Занятия: линии сетки из зазоров"},
- {"src":"../../assets/img/cases/pulse/pulse-coaches-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Тренеры: градиенты вместо фото"}
+ {"src":"../../assets/img/cases/pulse/pulse-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"First screen, 1440px"},
+ {"src":"../../assets/img/cases/pulse/m-pulse-hero","w":1179,"h":1977,"widths":[393,786],"caption":"First screen on a phone, 393px"},
+ {"src":"../../assets/img/cases/pulse/m-pulse-classes","w":1179,"h":1977,"widths":[393,786],"caption":"Classes on a phone"},
+ {"src":"../../assets/img/cases/pulse/pulse-classes-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Classes: grid lines made from gaps"},
+ {"src":"../../assets/img/cases/pulse/pulse-coaches-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Coaches: gradients instead of photos"}
 ]}}</script>
 </body>
 </html>

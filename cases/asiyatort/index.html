@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru" class="no-js">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>«ТОРТ по любви» — разбор кейса · Арсений Асянов</title>
-<meta name="description" content="Разбор сайта кондитерской «ТОРТ по любви» (asiyatort.ru): структура, стек, приём заявок в Telegram с хранилищем на случай сбоя, отказ от онлайн-оплаты, мобильная вёрстка и переезд на хостинг в России.">
+<title>ТОРТ по любви — case study · Arseny Asyanov</title>
+<meta name="description" content="Case study of the ТОРТ по любви bakery website (asiyatort.ru): structure, stack, Telegram order requests with fail-safe storage, dropping online payment, mobile layout fixes and the move to hosting in Russia.">
 <meta name="theme-color" content="#E9EDF3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="«ТОРТ по любви» — разбор кейса">
+<meta property="og:title" content="ТОРТ по любви — case study">
 <meta property="og:image" content="https://strangehul1-design.github.io/web-chef-portfolio/assets/img/cases/asiyatort/at-hero-1440-1440.jpg">
+<link rel="canonical" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/asiyatort/">
+<link rel="alternate" hreflang="en" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/asiyatort/">
+<link rel="alternate" hreflang="ru" href="https://strangehul1-design.github.io/web-chef-portfolio/ru/cases/asiyatort/">
+<link rel="alternate" hreflang="x-default" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/asiyatort/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E9EDF3'/%3E%3Cg fill='%230B1220'%3E%3Ccircle cx='18' cy='18' r='4'/%3E%3Ccircle cx='32' cy='18' r='4'/%3E%3Ccircle cx='46' cy='18' r='4'/%3E%3Ccircle cx='18' cy='32' r='4'/%3E%3Ccircle cx='46' cy='32' r='4'/%3E%3Ccircle cx='18' cy='46' r='4'/%3E%3Ccircle cx='32' cy='46' r='4'/%3E%3Ccircle cx='46' cy='46' r='4'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%232F5BFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,17 +25,23 @@
 <script src="../../assets/js/site.js" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main">К разбору</a>
+<a class="skip-link" href="#main">Skip to case study</a>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="../../" translate="no"><span>WEB CHEF</span><span class="sep"> · </span><span>АРСЕНИЙ АСЯНОВ</span></a>
-    <nav aria-label="Разделы">
-      <ul class="site-nav">
-        <li><a href="../../#works">Работы</a></li>
-        <li><a href="#contact">Контакты</a></li>
-      </ul>
-    </nav>
+    <a class="brand" href="../../" translate="no"><span>WEB CHEF</span><span class="sep"> · </span><span>ARSENY ASYANOV</span></a>
+    <div class="site-header__right">
+      <nav aria-label="Sections">
+        <ul class="site-nav">
+          <li><a href="../../#works">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <span class="lang-switch__opt" aria-current="true">EN</span>
+        <a class="lang-switch__opt" href="../../ru/cases/asiyatort/" hreflang="ru" lang="ru" data-lang-switch aria-label="Русская версия">RU</a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -38,82 +50,81 @@
     <div class="case-head reveal">
       <span class="case-num" aria-hidden="true">02</span>
       <div class="case-title-wrap">
-        <p class="kicker">Разбор · Сайт кондитерской · Самара</p>
-        <h1 class="case-title">«ТОРТ по любви»</h1>
+        <p class="kicker">Case study · Bakery website · Samara</p>
+        <h1 class="case-title">ТОРТ по любви</h1>
       </div>
     </div>
-    <p class="case-lead reveal d1">Сайт свадебных тортов на заказ для кондитерской из Самары. Человек смотрит работы, начинки и цены и оставляет заявку на торт или дегустацию — заявка сохраняется на хостинге и приходит в Telegram.</p>
-    
+    <p class="case-lead reveal d1">A website for a bakery in Samara, Russia, that makes custom wedding cakes. Visitors browse the cakes, fillings and prices and send a request for a cake or a tasting — the request is saved on the server and delivered to Telegram.</p>
     <dl class="case-facts reveal d2">
-      <div><dt>Клиент</dt><dd>Кондитерская «ТОРТ по любви», Самара</dd></div>
-      <div><dt>Сроки</dt><dd>22 августа — 16 сентября 2026,<br>37&nbsp;коммитов</dd></div>
-      <div><dt>Стек</dt><dd>HTML, CSS, JS без сборщика · PHP · Telegram Bot API · GitHub Actions</dd></div>
-      <div><dt>Ссылки</dt><dd><a href="https://asiyatort.ru/" target="_blank" rel="noopener">asiyatort.ru&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/tort-po-lyubvi" target="_blank" rel="noopener">код на GitHub&nbsp;↗</a></dd></div>
+      <div><dt>Client</dt><dd>ТОРТ по любви bakery (roughly “A Cake for Love”), Samara</dd></div>
+      <div><dt>Timeline</dt><dd>Aug 22 – Sep 16, 2026,<br>37&nbsp;commits</dd></div>
+      <div><dt>Stack</dt><dd>HTML, CSS, JS with no bundler · PHP · Telegram Bot API · GitHub Actions</dd></div>
+      <div><dt>Links</dt><dd><a href="https://asiyatort.ru/" target="_blank" rel="noopener">asiyatort.ru&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/tort-po-lyubvi" target="_blank" rel="noopener">code on GitHub&nbsp;↗</a></dd></div>
     </dl>
     <div class="shot-row reveal d3">
       <div>
-        <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Увеличить: первый экран на компьютере">
+        <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Enlarge: first screen on desktop">
           <span class="frame__bar" translate="no">asiyatort.ru</span>
-          <img src="../../assets/img/cases/asiyatort/at-hero-1440-800.jpg" srcset="../../assets/img/cases/asiyatort/at-hero-1440-800.jpg 800w, ../../assets/img/cases/asiyatort/at-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="Первый экран на компьютере: заголовок «Торт, который стоит увидеть прежде, чем съесть», кнопки заказа и дегустации, фото белого торта" fetchpriority="high">
+          <img src="../../assets/img/cases/asiyatort/at-hero-1440-800.jpg" srcset="../../assets/img/cases/asiyatort/at-hero-1440-800.jpg 800w, ../../assets/img/cases/asiyatort/at-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="Desktop first screen: the Russian headline “A cake worth seeing before you eat it”, order and tasting buttons, a photo of a white cake" fetchpriority="high">
         </button>
-        <p class="shot-caption">Первый экран, ширина 1440px.</p>
+        <p class="shot-caption">First screen, 1440px wide.</p>
       </div>
       <div>
-        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="1" aria-label="Увеличить: первый экран на телефоне">
-          <img src="../../assets/img/cases/asiyatort/m-at-hero-393.jpg" srcset="../../assets/img/cases/asiyatort/m-at-hero-393.jpg 393w, ../../assets/img/cases/asiyatort/m-at-hero-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Первый экран на телефоне шириной 393px" loading="lazy">
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="1" aria-label="Enlarge: first screen on a phone">
+          <img src="../../assets/img/cases/asiyatort/m-at-hero-393.jpg" srcset="../../assets/img/cases/asiyatort/m-at-hero-393.jpg 393w, ../../assets/img/cases/asiyatort/m-at-hero-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="First screen on a 393px phone" loading="lazy">
         </button>
-        <p class="shot-caption">Телефон, 393px.</p>
+        <p class="shot-caption">Phone, 393px.</p>
       </div>
       <div>
-        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="2" aria-label="Увеличить: форма заявки на телефоне">
-          <img src="../../assets/img/cases/asiyatort/m-at-request-393.jpg" srcset="../../assets/img/cases/asiyatort/m-at-request-393.jpg 393w, ../../assets/img/cases/asiyatort/m-at-request-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Форма заявки на телефоне: вкладки «Заказать торт», «Дегустация», «Доставка» и первые поля" loading="lazy">
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="2" aria-label="Enlarge: request form on a phone">
+          <img src="../../assets/img/cases/asiyatort/m-at-request-393.jpg" srcset="../../assets/img/cases/asiyatort/m-at-request-393.jpg 393w, ../../assets/img/cases/asiyatort/m-at-request-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Request form on a phone: “Order a cake”, “Tasting” and “Delivery” tabs and the first fields" loading="lazy">
         </button>
-        <p class="shot-caption">Заявка на телефоне.</p>
+        <p class="shot-caption">Request form on a phone.</p>
       </div>
     </div>
   </section>
 
   <div class="wrap case-body">
     <section class="case-block reveal" aria-labelledby="why">
-      <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Для кого и зачем</h2></div>
+      <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Who it’s for and why</h2></div>
       <div class="case-block__content prose">
-        <p>Кондитер печёт свадебные торты по индивидуальному эскизу. Сайту нужно показать настоящие работы и начинки, прямо назвать цены и довести человека до заявки — с датой свадьбы, местом, числом гостей, начинкой и фото-референсами, чтобы всё это не приходилось выспрашивать в переписке.</p>
-        <p>В сентябре появилось ещё одно требование: персональные данные клиентов должны храниться в России. Поэтому сайт переехал с GitHub Pages на домен <strong>asiyatort.ru</strong> и российский хостинг, а заявки стал принимать собственный обработчик на PHP.</p>
+        <p>The baker makes wedding cakes to a custom sketch. The site has to show real cakes and fillings, state prices plainly and lead visitors to a request — with the wedding date, venue, number of guests, filling and reference photos — so none of it has to be dragged out in chat.</p>
+        <p>In September a new requirement appeared: customers’ personal data had to be stored in Russia. So the site moved from GitHub Pages to the <strong>asiyatort.ru</strong> domain and Russian hosting, and requests are now handled by a custom PHP script.</p>
       </div>
     </section>
 
     <section class="case-block reveal" aria-labelledby="what">
-      <div class="case-block__label"><p class="kicker">02</p><h2 id="what">Что сделано</h2></div>
+      <div class="case-block__label"><p class="kicker">02</p><h2 id="what">What was built</h2></div>
       <div class="case-block__content">
-        <ol class="structure" aria-label="Разделы главной страницы">
-          <li><b>Первый экран</b><span>«Торт, который стоит увидеть прежде, чем съесть», кнопки «Заказать торт» и «Записаться на дегустацию»</span></li>
-          <li><b>Знакомство с кондитером</b><span>история мастера её словами и портрет</span></li>
-          <li><b>Кредо</b><span>короткое обещание про свадебный торт как финал торжества</span></li>
-          <li><b>Наши работы</b><span>настоящие торты вместо шаблонных карточек</span></li>
-          <li><b>Как проходит заказ</b><span>четыре шага от первого сообщения до торта на площадке, эскиз входит в стоимость</span></li>
-          <li><b>Начинки</b><span>семь вкусов</span></li>
-          <li><b>Цены</b><span>торты по весу с учётом декора, дегустация и доставка, кнопки «В корзину»</span></li>
-          <li><b>Торты на годовщину</b><span>отдельное предложение не только к свадьбе</span></li>
-          <li><b>Заявка</b><span>вкладки «Заказать торт», «Дегустация» и «Доставка»</span></li>
-          <li><b>Отзывы и галерея</b><span>кадры со свадеб и отзывы в одной кладке</span></li>
+        <ol class="structure" aria-label="Home page sections">
+          <li><b>First screen</b><span>“A cake worth seeing before you eat it”, with “Order a cake” and “Book a tasting” buttons</span></li>
+          <li><b>Meet the baker</b><span>her story in her own words, with a portrait</span></li>
+          <li><b>Credo</b><span>a short promise about the wedding cake as the finale of the celebration</span></li>
+          <li><b>Our work</b><span>real cakes instead of placeholder cards</span></li>
+          <li><b>How ordering works</b><span>four steps from the first message to the cake at the venue; the sketch is included in the price</span></li>
+          <li><b>Fillings</b><span>seven flavours</span></li>
+          <li><b>Prices</b><span>cakes by weight with decoration included, tasting and delivery, “Add to cart” buttons</span></li>
+          <li><b>Anniversary cakes</b><span>an offer beyond weddings</span></li>
+          <li><b>Request</b><span>“Order a cake”, “Tasting” and “Delivery” tabs</span></li>
+          <li><b>Reviews &amp; gallery</b><span>wedding photos and reviews in one masonry grid</span></li>
         </ol>
         <ul class="stack">
-          <li><b>Вёрстка</b>HTML, CSS и JS без сборщика. Цвета и шрифты — в одном файле токенов (tokens.css): Cormorant Garamond, Jost и рукописный Marck Script для «по любви».</li>
-          <li><b>Заявки</b>Две формы — на торт и на дегустацию — с фото-референсами и скрытым полем-ловушкой от спама. Обработчик на хостинге пересылает их в Telegram.</li>
-          <li><b>Отдельные страницы</b>Оформление заказа из корзины, публичная оферта и политика обработки персональных данных.</li>
-          <li><b>Поиск</b>Цены в статичном HTML, разметка schema.org (Bakery, OfferCatalog, WebSite), robots.txt, sitemap.xml, canonical и og-теги; сайт подтверждён в Яндекс Вебмастере.</li>
+          <li><b>Layout</b>HTML, CSS and JS with no bundler. Colours and fonts live in one token file (tokens.css): Cormorant Garamond, Jost and the handwritten Marck Script for “по любви”.</li>
+          <li><b>Requests</b>Two forms — for a cake and for a tasting — with reference photos and a hidden honeypot field against spam. A server-side handler forwards them to Telegram.</li>
+          <li><b>Extra pages</b>Checkout from the cart, a public offer and a personal data policy.</li>
+          <li><b>Search</b>Prices in static HTML, schema.org markup (Bakery, OfferCatalog, WebSite), robots.txt, sitemap.xml, canonical and Open Graph tags; the site is verified in Yandex Webmaster.</li>
         </ul>
         <div class="shot-row shot-row--two">
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Увеличить: раздел «Наши работы»">
+            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Enlarge: “Our work” section">
               <span class="frame__bar" translate="no">asiyatort.ru/#works</span>
-              <img src="../../assets/img/cases/asiyatort/at-works-1440-800.jpg" srcset="../../assets/img/cases/asiyatort/at-works-1440-800.jpg 800w, ../../assets/img/cases/asiyatort/at-works-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Раздел «Наши работы»: заголовок «Каждый торт собран для одной пары» и три фото тортов" loading="lazy">
+              <img src="../../assets/img/cases/asiyatort/at-works-1440-800.jpg" srcset="../../assets/img/cases/asiyatort/at-works-1440-800.jpg 800w, ../../assets/img/cases/asiyatort/at-works-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="“Our work” section: the headline “Every cake is made for one couple” and three cake photos" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Увеличить: раздел заявки">
+            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Enlarge: request section">
               <span class="frame__bar" translate="no">asiyatort.ru/#request</span>
-              <img src="../../assets/img/cases/asiyatort/at-request-1440-800.jpg" srcset="../../assets/img/cases/asiyatort/at-request-1440-800.jpg 800w, ../../assets/img/cases/asiyatort/at-request-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Раздел заявки: «Выберите, с чего вам удобнее», вкладки и поля формы заказа" loading="lazy">
+              <img src="../../assets/img/cases/asiyatort/at-request-1440-800.jpg" srcset="../../assets/img/cases/asiyatort/at-request-1440-800.jpg 800w, ../../assets/img/cases/asiyatort/at-request-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Request section: “Choose where you’d like to start”, tabs and order form fields" loading="lazy">
             </button>
           </div>
         </div>
@@ -121,65 +132,65 @@
     </section>
 
     <section class="case-block reveal" aria-labelledby="decisions">
-      <div class="case-block__label"><p class="kicker">03</p><h2 id="decisions">Решения, на которые стоит посмотреть</h2></div>
+      <div class="case-block__label"><p class="kicker">03</p><h2 id="decisions">Decisions worth a look</h2></div>
       <div class="case-block__content">
         <ul class="decisions">
           <li class="decision">
-            <h3>Заявка не теряется, даже если Telegram не ответил</h3>
-            <p>Заявка сначала записывается и только потом отправляется в Telegram. Если отправка сорвалась, имя и телефон клиента уже сохранены, а следующая заявка заодно пробует дослать недоставленные. Ответ сайта различает три исхода: доставлено; не доставлено, но сохранено; не сохранено — и только в последнем случае человеку предлагается запасной путь через сообщество ВКонтакте.</p>
-            <p>Сначала это делал воркер Cloudflare. После переезда на российский хостинг ту же схему повторяет обработчик на PHP: запись на диск, потом Telegram, потом досылка.</p>
-            <ul class="evidence" aria-label="Коммиты">
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/ff5747f" target="_blank" rel="noopener"><code translate="no">ff5747f</code> хранилище и досылка ↗</a></li>
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/9cb5e78" target="_blank" rel="noopener"><code translate="no">9cb5e78</code> приём заявок на PHP ↗</a></li>
+            <h3>A request isn’t lost even if Telegram doesn’t respond</h3>
+            <p>Each request is saved first and only then sent to Telegram. If sending fails, the customer’s name and phone number are already stored, and the next request also retries the undelivered ones. The site’s response distinguishes three outcomes: delivered; not delivered but saved; not saved — and only in the last case is the visitor offered a fallback through the VK community.</p>
+            <p>At first a Cloudflare Worker did this. After the move to Russian hosting, a PHP handler follows the same scheme: write to disk, then Telegram, then retry.</p>
+            <ul class="evidence" aria-label="Commits">
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/ff5747f" target="_blank" rel="noopener"><code translate="no">ff5747f</code> storage and retries ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/9cb5e78" target="_blank" rel="noopener"><code translate="no">9cb5e78</code> PHP request handler ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>От онлайн-оплаты отказались в пользу заявки</h3>
-            <p>Сначала на сайте были корзина и оплата по схеме ЮKassa в демо-режиме. Сумму считал сервер по своему каталогу, а браузер передавал только товары и количество — подменить цену в запросе было нельзя.</p>
-            <p>Потом от оплаты на сайте отказались: расчёт идёт переводом на карту или наличными. Кнопка «Оплатить» и клиентский код платежа убраны, корзина теперь отправляет обычную заявку тем же путём, что и формы на главной, а e-mail перестал быть обязательным — он был нужен только для чека.</p>
-            <ul class="evidence" aria-label="Коммиты">
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/e787844" target="_blank" rel="noopener"><code translate="no">e787844</code> цены, корзина, демо-оплата ↗</a></li>
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/0530856" target="_blank" rel="noopener"><code translate="no">0530856</code> оплата убрана ↗</a></li>
+            <h3>Online payment was dropped in favour of a request</h3>
+            <p>At first the site had a cart and a demo payment flow modelled on YooKassa. The server calculated the total from its own catalogue, while the browser only sent items and quantities, so the price couldn’t be tampered with in the request.</p>
+            <p>Later, payment on the site was dropped: customers pay by bank card transfer or in cash. The “Pay” button and the client-side payment code were removed, the cart now sends a regular request the same way as the forms on the home page, and email is no longer required — it was only needed for the receipt.</p>
+            <ul class="evidence" aria-label="Commits">
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/e787844" target="_blank" rel="noopener"><code translate="no">e787844</code> prices, cart, demo payment ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/0530856" target="_blank" rel="noopener"><code translate="no">0530856</code> payment removed ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Мобильная вёрстка: поломки, которых не видно на компьютере</h3>
-            <p>Блоки вылезали за правый край на 32px на всех ширинах: при выносе токенов в отдельный файл пропал общий сброс <b>box-sizing</b>, а <b>overflow-x: clip</b> прятал вылет так, что проверка «есть ли горизонтальная прокрутка» молчала. Нашлось по скриншоту — переключатель форм был обрезан справа.</p>
-            <p>Там же: текст в полях ввода поднят с 15,5 до 16px, потому что на меньшем размере iOS Safari увеличивает страницу при фокусе. У кнопок, вкладок и ссылок в подвале появилась минимальная зона нажатия 44px.</p>
-            <ul class="evidence" aria-label="Коммиты">
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/72df44e" target="_blank" rel="noopener"><code translate="no">72df44e</code> мобильная вёрстка ↗</a></li>
+            <h3>Mobile layout: bugs you can’t see on desktop</h3>
+            <p>Blocks overflowed the right edge by 32px at every width: when the tokens were moved to a separate file, the global <b>box-sizing</b> reset went missing, and <b>overflow-x: clip</b> hid the overflow so well that the “is there horizontal scrolling” check stayed silent. It was caught in a screenshot — the form switcher was cut off on the right.</p>
+            <p>In the same pass, input text went from 15.5 to 16px, because below that iOS Safari zooms the page when a field gets focus. Buttons, tabs and footer links got a minimum 44px tap target.</p>
+            <ul class="evidence" aria-label="Commits">
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/72df44e" target="_blank" rel="noopener"><code translate="no">72df44e</code> mobile layout ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Галочка согласия не ставилась на ширине 393px</h3>
-            <p>Форма молча не отправлялась: галочка согласия не вставала. Причина — прошлая правка зон нажатия. Ссылка на политику стояла внутри подписи, её зона была раздута до 30px при высоте строки 17px и наезжала на соседние строки — Chromium притягивал касание к ссылке. На 360 и 375px всё работало, это зависело от переноса строк.</p>
-            <p>Ссылку вынесли из предложения на отдельную строку со своей зоной 44px, подпись целиком принадлежит галочке. Проверено касаниями в шесть точек подписи на каждой ширине.</p>
-            <ul class="evidence" aria-label="Коммиты">
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/0530856" target="_blank" rel="noopener"><code translate="no">0530856</code> заявка с телефона доходит ↗</a></li>
+            <h3>The consent checkbox wouldn’t tick at 393px</h3>
+            <p>The form silently refused to submit because the consent checkbox wouldn’t tick. The cause was an earlier tap-target fix: the policy link sat inside the label, its hit area had been enlarged to 30px on a 17px line and overlapped neighbouring lines — Chromium snapped the tap to the link. At 360 and 375px everything worked; it depended on how the lines wrapped.</p>
+            <p>The link was moved out of the sentence onto its own line with its own 44px target, so the whole label belongs to the checkbox. Verified by tapping six points of the label at each width.</p>
+            <ul class="evidence" aria-label="Commits">
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/0530856" target="_blank" rel="noopener"><code translate="no">0530856</code> requests from phones get through ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Редактор сайта — в том же Telegram-боте</h3>
-            <p>Бот, который приносит заявки, умеет менять содержимое сайта через меню на кнопках: 40 текстовых полей, 6 ссылок и 14 мест под фото — контакты, названия и цены, отзывы, подписи разделов. Доступ только у владельца.</p>
-            <p>Исходные тексты остаются в HTML, бот хранит только правки поверх них, и страница подставляет их при загрузке. Поэтому недоступный сервер не оставляет пустых мест, а поисковики видят настоящий текст. После переезда правки по-прежнему хранятся на прежнем сервере, но данные из форм туда больше не уходят.</p>
-            <ul class="evidence" aria-label="Коммиты">
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/899f38b" target="_blank" rel="noopener"><code translate="no">899f38b</code> редактор в боте ↗</a></li>
+            <h3>The site editor lives in the same Telegram bot</h3>
+            <p>The bot that delivers requests can also edit the site through a button menu: 40 text fields, 6 links and 14 photo slots — contacts, product names and prices, reviews, section captions. Only the owner has access.</p>
+            <p>The original texts stay in the HTML; the bot stores only the edits on top of them, and the page applies them on load. So an unavailable server doesn’t leave empty gaps, and search engines see the real text. After the move, the edits are still stored on the old server, but form data no longer goes there.</p>
+            <ul class="evidence" aria-label="Commits">
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/899f38b" target="_blank" rel="noopener"><code translate="no">899f38b</code> editor in the bot ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Фотографии со свадеб: из 19,1&nbsp;МБ в 2,4&nbsp;МБ</h3>
-            <p>Четырнадцать исходных снимков весили 19,1&nbsp;МБ, один PNG — 5,8&nbsp;МБ. Скрипт на PowerShell готовит из каждого две копии: 800px для плиток и 1600px для просмотра во весь экран, разворачивает кадры по EXIF и записывает размеры в манифест. В сетку браузер по <b>srcset</b> берёт только лёгкие копии, а <b>width</b> и <b>height</b> заранее резервируют место — плитки не прыгают при загрузке.</p>
-            <ul class="evidence" aria-label="Коммиты">
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/461279b" target="_blank" rel="noopener"><code translate="no">461279b</code> галерея ↗</a></li>
+            <h3>Wedding photos: from 19.1&nbsp;MB down to 2.4&nbsp;MB</h3>
+            <p>Fourteen source photos weighed 19.1&nbsp;MB, one PNG alone 5.8&nbsp;MB. A PowerShell script makes two copies of each: 800px for grid tiles and 1600px for full-screen viewing, rotates frames according to EXIF and writes their dimensions to a manifest. Thanks to <b>srcset</b>, the browser loads only the light copies into the grid, and <b>width</b> and <b>height</b> reserve space in advance so the tiles don’t jump while loading.</p>
+            <ul class="evidence" aria-label="Commits">
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/461279b" target="_blank" rel="noopener"><code translate="no">461279b</code> gallery ↗</a></li>
             </ul>
           </li>
           <li class="decision">
-            <h3>Переезд на свой домен и выкладка без ручной загрузки</h3>
-            <p>Сайт переехал на asiyatort.ru и хостинг REG.RU. После пуша в main GitHub Actions выкладывает файлы по FTPS — пароль не идёт открытым текстом, доступы лежат в секретах репозитория, а сама выкладка включается переменной <b>DEPLOY_ENABLED</b>. Исходники прежнего сервера, служебные скрипты и демо-оплата на хостинг не попадают.</p>
-            <p>После переезда нашлась ещё одна деталь: PHP видит несколько файлов только под именем <b>refs[]</b>, а форма отправляла <b>refs</b>, и фото-референсы не доходили. Теперь обработчик понимает оба варианта и отмечает в заявке фото, которые не загрузились.</p>
-            <ul class="evidence" aria-label="Коммиты">
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/96899e3" target="_blank" rel="noopener"><code translate="no">96899e3</code> выкладка по FTPS ↗</a></li>
-              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/db2fc7e" target="_blank" rel="noopener"><code translate="no">db2fc7e</code> фото доходят до Telegram ↗</a></li>
+            <h3>A custom domain and deployment without manual uploads</h3>
+            <p>The site moved to asiyatort.ru and REG.RU hosting. After a push to main, GitHub Actions deploys the files over FTPS — the password isn’t sent in plain text, credentials live in repository secrets, and deployment itself is switched on by the <b>DEPLOY_ENABLED</b> variable. The old server’s source code, utility scripts and the demo payment never reach the hosting.</p>
+            <p>One more detail surfaced after the move: PHP only sees multiple files under the name <b>refs[]</b>, but the form sent <b>refs</b>, so reference photos weren’t arriving. The handler now accepts both and notes in the request which photos failed to upload.</p>
+            <ul class="evidence" aria-label="Commits">
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/96899e3" target="_blank" rel="noopener"><code translate="no">96899e3</code> FTPS deployment ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/tort-po-lyubvi/commit/db2fc7e" target="_blank" rel="noopener"><code translate="no">db2fc7e</code> photos reach Telegram ↗</a></li>
             </ul>
           </li>
         </ul>
@@ -187,35 +198,34 @@
     </section>
 
     <section class="case-block reveal" aria-labelledby="verify">
-      <div class="case-block__label"><p class="kicker">04</p><h2 id="verify">Как проверить</h2></div>
+      <div class="case-block__label"><p class="kicker">04</p><h2 id="verify">How to check</h2></div>
       <div class="case-block__content">
         <ul class="checklist">
-          <li>Пройти путь от первого экрана до заявки <a href="https://asiyatort.ru/" target="_blank" rel="noopener">asiyatort.ru ↗</a></li>
-          <li>Посмотреть формы и вкладки заявки <a href="https://asiyatort.ru/#request" target="_blank" rel="noopener">раздел «Начнём» ↗</a></li>
-          <li>Оферта и политика обработки персональных данных <a href="https://asiyatort.ru/privacy/" target="_blank" rel="noopener">политика ↗</a></li>
-          <li>Все решения с объяснениями — в описаниях коммитов <a href="https://github.com/strangehul1-design/tort-po-lyubvi/commits/main" target="_blank" rel="noopener">история ↗</a></li>
+          <li>Go from the first screen to a request <a href="https://asiyatort.ru/" target="_blank" rel="noopener">asiyatort.ru ↗</a></li>
+          <li>See the request forms and tabs <a href="https://asiyatort.ru/#request" target="_blank" rel="noopener">request section ↗</a></li>
+          <li>Public offer and personal data policy <a href="https://asiyatort.ru/privacy/" target="_blank" rel="noopener">policy ↗</a></li>
+          <li>Every decision is explained in the commit messages (in Russian) <a href="https://github.com/strangehul1-design/tort-po-lyubvi/commits/main" target="_blank" rel="noopener">history ↗</a></li>
         </ul>
       </div>
     </section>
 
-    
-    <nav class="case-nav reveal" aria-label="Другие разборы">
-      <a href="../big-portfolio/" rel="prev"><small>← Разбор 01</small><strong>Web Chef Portfolio</strong></a>
-      <a href="../pulse/" rel="next"><small>Разбор 03 →</small><strong>PULSE</strong></a>
+    <nav class="case-nav reveal" aria-label="Other case studies">
+      <a href="../big-portfolio/" rel="prev"><small>← Case study 01</small><strong>Web Chef Portfolio</strong></a>
+      <a href="../pulse/" rel="next"><small>Case study 03 →</small><strong>PULSE</strong></a>
     </nav>
   </div>
 
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <p class="kicker reveal">Связь со мной</p>
-      <h2 class="contact__title reveal d1" id="contact-title">Есть <em>задача?</em><br>Пиши.</h2>
+      <p class="kicker reveal">Get in touch</p>
+      <h2 class="contact__title reveal d1" id="contact-title">Got a <em>project?</em><br>Drop me a line.</h2>
       <ul class="contact__list reveal d2">
         <li><a class="contact__item" href="https://t.me/tacokinggl1"><span class="contact__label">Telegram</span><span class="contact__value">@tacokinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
-        <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">ВКонтакте</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">VK</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
         <li><a class="contact__item" href="mailto:digitalgl1@mail.ru"><span class="contact__label">Email</span><span class="contact__value">digitalgl1@mail.ru</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
       </ul>
       <footer class="contact__foot">
-        <span>WEB CHEF · АРСЕНИЙ АСЯНОВ</span>
+        <span>WEB CHEF · ARSENY ASYANOV</span>
         <span>© 2026</span>
       </footer>
     </div>
@@ -226,25 +236,25 @@
   <div class="lb-top">
     <p class="lb-title" id="lb-title"></p>
     <p class="lb-counter" aria-live="polite"></p>
-    <button class="lb-close" type="button" aria-label="Закрыть">×</button>
+    <button class="lb-close" type="button" aria-label="Close">×</button>
   </div>
   <div class="lb-stage">
-    <button class="lb-nav lb-prev" type="button" aria-label="Предыдущий скриншот">←</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous screenshot">←</button>
     <div class="lb-viewport"><div class="lb-track"><img class="lb-img" alt="" decoding="async"></div></div>
-    <button class="lb-nav lb-next" type="button" aria-label="Следующий скриншот">→</button>
+    <button class="lb-nav lb-next" type="button" aria-label="Next screenshot">→</button>
   </div>
   <p class="lb-caption"></p>
   <div class="lb-dots"></div>
 </dialog>
 
 <script type="application/json" id="gallery-data">
-{"shots":{"title":"«ТОРТ по любви»","images":[
- {"src":"../../assets/img/cases/asiyatort/at-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Первый экран, 1440px"},
- {"src":"../../assets/img/cases/asiyatort/m-at-hero","w":1179,"h":1977,"widths":[393,786],"caption":"Первый экран на телефоне, 393px"},
- {"src":"../../assets/img/cases/asiyatort/m-at-request","w":1179,"h":1977,"widths":[393,786],"caption":"Заявка на телефоне"},
- {"src":"../../assets/img/cases/asiyatort/at-works-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Раздел «Наши работы»"},
- {"src":"../../assets/img/cases/asiyatort/at-request-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Раздел заявки: вкладки и форма"},
- {"src":"../../assets/img/cases/asiyatort/at-gallery-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Отзывы и галерея со свадеб"}
+{"shots":{"title":"ТОРТ по любви","images":[
+ {"src":"../../assets/img/cases/asiyatort/at-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"First screen, 1440px"},
+ {"src":"../../assets/img/cases/asiyatort/m-at-hero","w":1179,"h":1977,"widths":[393,786],"caption":"First screen on a phone, 393px"},
+ {"src":"../../assets/img/cases/asiyatort/m-at-request","w":1179,"h":1977,"widths":[393,786],"caption":"Request form on a phone"},
+ {"src":"../../assets/img/cases/asiyatort/at-works-1440","w":1440,"h":900,"widths":[800,1440],"caption":"“Our work” section"},
+ {"src":"../../assets/img/cases/asiyatort/at-request-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Request section: tabs and form"},
+ {"src":"../../assets/img/cases/asiyatort/at-gallery-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Reviews and wedding gallery"}
 ]}}</script>
 </body>
 </html>

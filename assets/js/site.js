@@ -7,6 +7,23 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  /* ── Язык ─────────────────────────────────────────────────────
+     Английская версия лежит в корне, русская — в /ru/. Страницы
+     статичные, из скрипта переводятся только подписи, которые он
+     меняет сам. */
+  var isRu = (document.documentElement.lang || '').toLowerCase().indexOf('ru') === 0;
+  var t = isRu
+    ? { pause: 'Остановить анимацию', play: 'Включить анимацию', image: function (i, n) { return 'Изображение ' + i + ' из ' + n; } }
+    : { pause: 'Pause animation', play: 'Play animation', image: function (i, n) { return 'Image ' + i + ' of ' + n; } };
+
+  // Переключатель языка ведёт на ту же страницу и к тому же разделу:
+  // якоря (#works, #tort, #decisions…) в обеих версиях одинаковые.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-lang-switch]'), function (link) {
+    link.addEventListener('click', function () {
+      if (location.hash) link.setAttribute('href', link.getAttribute('href').split('#')[0] + location.hash);
+    });
+  });
+
   /* ── Появление при прокрутке ──────────────────────────────────
      Один раз на блок: повторная анимация при каждом проходе мимо
      мешала бы читать. Без IntersectionObserver всё видно сразу. */
@@ -42,7 +59,7 @@
     document.body.classList.toggle('motion-paused', paused);
     if (motionToggle) {
       motionToggle.setAttribute('aria-pressed', String(paused));
-      motionToggle.querySelector('.motion-toggle__label').textContent = paused ? 'Включить анимацию' : 'Остановить анимацию';
+      motionToggle.querySelector('.motion-toggle__label').textContent = paused ? t.play : t.pause;
     }
     window.dispatchEvent(new CustomEvent('webchef:motion', { detail: { paused: paused } }));
     if (save) {
@@ -193,7 +210,7 @@
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'lb-dot';
-      b.setAttribute('aria-label', 'Изображение ' + (i + 1) + ' из ' + items.length);
+      b.setAttribute('aria-label', t.image(i + 1, items.length));
       b.addEventListener('click', function () { go(i - state.index); });
       ui.dots.appendChild(b);
     });
