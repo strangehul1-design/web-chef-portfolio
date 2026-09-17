@@ -16,13 +16,137 @@
     ? { pause: 'Остановить анимацию', play: 'Включить анимацию', image: function (i, n) { return 'Изображение ' + i + ' из ' + n; } }
     : { pause: 'Pause animation', play: 'Play animation', image: function (i, n) { return 'Image ' + i + ' of ' + n; } };
 
-  // Переключатель языка ведёт на ту же страницу и к тому же разделу:
-  // якоря (#works, #tort, #decisions…) в обеих версиях одинаковые.
+  /* ── Переключение языка без прыжков ───────────────────────────
+     Раньше переключатель переносил якорь из адреса (#works и т. п.).
+     Но якорь остаётся в адресе и после того, как человек ушёл от раздела,
+     поэтому новая страница то прыгала вниз к давно покинутому разделу,
+     то открывалась в самом верху. Теперь запоминается то, что реально
+     на экране: номер блока и доля, на которую он пролистан. Блоки в обеих
+     версиях идут в одном порядке. Новая страница прячет содержимое
+     (класс is-restoring ставит скрипт в <head>), сразу встаёт на это
+     место и только потом показывается — без видимой прокрутки. */
+  var RESTORE_KEY = 'webchef-lang-restore';
+  var headerOffset = function () {
+    var header = document.querySelector('.site-header');
+    return (header ? header.offsetHeight : 0) + 16;
+  };
+  var anchorBlocks = function () {
+    return Array.prototype.slice.call(document.querySelectorAll('main section, main article, main nav'));
+  };
+  // Положение по раскладке, без transform: ещё не проявившиеся блоки
+  // (.reveal) сдвинуты на 36px, и getBoundingClientRect дал бы ошибку.
+  var layoutBox = function (el) {
+    var top = 0;
+    for (var node = el; node; node = node.offsetParent) top += node.offsetTop;
+    return { top: top, height: el.offsetHeight };
+  };
+
   Array.prototype.forEach.call(document.querySelectorAll('[data-lang-switch]'), function (link) {
     link.addEventListener('click', function () {
-      if (location.hash) link.setAttribute('href', link.getAttribute('href').split('#')[0] + location.hash);
+      var target = link.href.split('#')[0];
+      link.setAttribute('href', link.getAttribute('href').split('#')[0]); // без якоря браузер не прыгает сам
+      var state = null;
+      var y = window.scrollY;
+      var maxY = document.documentElement.scrollHeight - window.innerHeight;
+      if (y > 40 && y >= maxY - 2) {
+        // долистал до самого низа — внизу и остаёмся, даже если текст другой длины
+        state = { url: target, bottom: true, t: Date.now() };
+      } else if (y > 40) {
+        var line = y + headerOffset();
+        var inside = null;
+        var above = null;
+        anchorBlocks().forEach(function (block, i, all) {
+          var box = layoutBox(block);
+          if (!box.height) return;
+          var top = box.top;
+          var bottom = top + box.height;
+          if (top <= line && line < bottom) {
+            // вложенные блоки идут позже родителя — в итоге берётся самый глубокий
+            inside = { index: i, count: all.length, ratio: (line - top) / box.height, extra: 0 };
+          } else if (bottom <= line && (!above || bottom >= above.bottom)) {
+            // линия попала в отступ между блоками — считаем от ближайшего блока выше
+            above = { index: i, count: all.length, ratio: 1, extra: line - bottom, bottom: bottom };
+          }
+        });
+        var hit = inside || above;
+        if (hit) state = { url: target, index: hit.index, count: hit.count, ratio: hit.ratio, extra: hit.extra, t: Date.now() };
+      }
+      try {
+        if (state) sessionStorage.setItem(RESTORE_KEY, JSON.stringify(state));
+        else sessionStorage.removeItem(RESTORE_KEY);
+      } catch (err) { /* без хранилища страница просто откроется сверху */ }
     });
   });
+
+  (function restorePosition() {
+    var root = document.documentElement;
+    var state = null;
+    try {
+      state = JSON.parse(sessionStorage.getItem(RESTORE_KEY) || 'null');
+      sessionStorage.removeItem(RESTORE_KEY);
+    } catch (err) { state = null; }
+    var here = location.href.split('#')[0].split('?')[0];
+    if (!state || state.url.split('?')[0] !== here || Date.now() - state.t > 15000) {
+      root.classList.remove('is-restoring');
+      return;
+    }
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+    var touched = false;
+    var observer = null;
+    var stopTracking = function () {
+      touched = true;
+      if (observer) observer.disconnect();
+    };
+    ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(function (type) {
+      window.addEventListener(type, stopTracking, { passive: true, once: true });
+    });
+
+    var apply = function () {
+      if (touched) return;
+      var top;
+      if (state.bottom) {
+        top = root.scrollHeight - window.innerHeight;
+      } else {
+        var blocks = anchorBlocks();
+        if (blocks.length !== state.count || !blocks[state.index]) return;
+        var box = layoutBox(blocks[state.index]);
+        top = box.top + state.ratio * box.height + (state.extra || 0) - headerOffset();
+      }
+      window.scrollTo({ top: Math.max(0, Math.round(top)), left: 0, behavior: 'instant' });
+    };
+    var shown = false;
+    var reveal = function () {
+      if (shown) return;
+      shown = true;
+      apply();
+      root.classList.remove('is-restoring');
+    };
+
+    apply();
+    // Веб-шрифты догружаются уже после разметки и меняют высоту текста выше экрана.
+    // Показываем страницу, когда они готовы (но не дольше 0,9 с), чтобы не было
+    // видимой поправки положения.
+    requestAnimationFrame(function () {
+      if (document.fonts && document.fonts.status === 'loading') {
+        document.fonts.ready.then(reveal);
+        setTimeout(reveal, 900);
+      } else {
+        reveal();
+      }
+    });
+    // Если что-то выше ещё сдвинется (шрифт, картинка), держим место —
+    // пока человек сам не начал листать и не дольше 3 секунд.
+    if ('ResizeObserver' in window) {
+      observer = new ResizeObserver(apply);
+      observer.observe(document.body);
+      setTimeout(function () { observer.disconnect(); }, 3000);
+    }
+    window.addEventListener('load', function () {
+      apply();
+      if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+    }, { once: true });
+  })();
 
   /* ── Появление при прокрутке ──────────────────────────────────
      Один раз на блок: повторная анимация при каждом проходе мимо

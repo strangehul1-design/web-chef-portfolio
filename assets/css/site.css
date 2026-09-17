@@ -50,7 +50,12 @@
   --header: 60px;
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header) + 12px); -webkit-text-size-adjust: 100%; }
+/* Без scroll-behavior: smooth — плавность переходов по кнопкам задаёт site.js,
+   а CSS-плавность заставляла страницу «ехать» при загрузке по ссылке с якорем. */
+html { scroll-padding-top: calc(var(--header) + 12px); -webkit-text-size-adjust: 100%; }
+/* После переключения языка содержимое показывается, когда страница уже на нужном месте */
+.js main { transition: opacity .18s ease; }
+.is-restoring main { opacity: 0; transition: none; }
 body {
   font-family: var(--f-body);
   font-size: 16px;
@@ -552,7 +557,6 @@ html.lb-lock { overflow: hidden; }
 
 /* ── Уменьшить движение: без сдвигов и пульсаций, только прозрачность ── */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   .js .reveal { transform: none; transition: opacity .3s ease; }
   .js .reveal.d1, .js .reveal.d2, .js .reveal.d3 { transition-delay: 0s; }
   .js .wipe img { clip-path: none; transition: none; }
