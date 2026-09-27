@@ -57,15 +57,15 @@
     <p class="case-lead reveal d1">Интерактивный учебник для защиты студенческого проекта: семь коротких уроков о том, как игры хранят и рисуют трёхмерный мир. В каждом уроке живая 3D-сцена, которую можно покрутить руками, а на первом экране робот идёт туда, куда кликнули.</p>
     <dl class="case-facts reveal d2">
       <div><dt>Тип</dt><dd>Проектная работа на заказ для студента, защищена на «отлично»</dd></div>
-      <div><dt>Сроки</dt><dd>27 сентября 2026, 1&nbsp;коммит</dd></div>
-      <div><dt>Стек</dt><dd>HTML, CSS, JavaScript и three.js без сборщика · 1917&nbsp;строк</dd></div>
+      <div><dt>Сроки</dt><dd>27 сентября 2026, 2&nbsp;коммита</dd></div>
+      <div><dt>Стек</dt><dd>HTML, CSS, JavaScript и three.js без сборщика · 2034&nbsp;строки</dd></div>
       <div><dt>Ссылки</dt><dd><a href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener">живая страница&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/3d-space-in-games" target="_blank" rel="noopener">код на GitHub&nbsp;↗</a></dd></div>
     </dl>
     <div class="shot-row reveal d3">
       <div>
         <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Увеличить: первый экран на компьютере">
           <span class="frame__bar" translate="no">strangehul1-design.github.io/3d-space-in-games/</span>
-          <img src="../../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="Первый экран: заголовок «Как устроен 3D-мир в играх», справа 3D-робот на сетке с осями X, Y, Z идёт к зелёной метке, внизу координаты под курсором" fetchpriority="high">
+          <img src="../../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="Первый экран: пометка «Проектная работа», заголовок «Как устроен 3D-мир в играх», справа 3D-робот на сетке с осями X, Y, Z идёт к зелёной метке, внизу координаты под курсором" fetchpriority="high">
         </button>
         <p class="shot-caption">Первый экран: робот идёт к точке клика, ширина 1440px.</p>
       </div>
@@ -89,7 +89,7 @@
       <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Для кого и зачем</h2></div>
       <div class="case-block__content prose">
         <p>Заказ от студента: ему нужен был сайт для защиты проекта о том, как устроено трёхмерное пространство в играх. Тема абстрактная — координаты, матрицы, камеры, — и на словах её легко потерять. Задача была показать каждое понятие так, чтобы его можно было потрогать: подвинуть ползунок, повернуть камеру, кликнуть по полу.</p>
-        <p>Поэтому каждый урок устроен одинаково: слева короткий текст простым языком, справа живая сцена и табло с цифрами, которые меняются вместе с ней. Проект защищён на «отлично».</p>
+        <p>Поэтому каждый урок устроен одинаково: слева короткий текст простым языком, справа живая сцена и табло с цифрами, которые меняются вместе с ней. Сам сайт оформлен как проектная работа: в начале актуальность, цель и задачи, в конце вывод и источники, а каждая задача ведёт к своему уроку. Проект защищён на «отлично».</p>
       </div>
     </section>
 
@@ -97,7 +97,8 @@
       <div class="case-block__label"><p class="kicker">02</p><h2 id="what">Что сделано</h2></div>
       <div class="case-block__content">
         <ol class="structure" aria-label="Разделы сайта">
-          <li><b>Первый экран</b><span>робот на сетке с осями: кликаешь по полу — идёт туда, а табло показывает координаты под курсором</span></li>
+          <li><b>Первый экран</b><span>пометка «Проектная работа» и робот на сетке с осями: кликаешь по полу — идёт туда, а табло показывает координаты под курсором</span></li>
+          <li><b>О проекте</b><span>актуальность, цель, восемь задач со ссылками на уроки и паспорт проекта в виде основной надписи чертежа</span></li>
           <li><b>Координаты</b><span>кристалл на ползунках X, Y, Z, пунктирные проекции на оси и таблица «какая ось смотрит вверх» в Unity, Unreal, Godot и Blender</span></li>
           <li><b>Трансформ</b><span>манипулятор, как в редакторах движков: перемещение, поворот и масштаб по клавишам W, E, R и таблица чисел</span></li>
           <li><b>Меш</b><span>сфера, бублик и камень в шести уровнях детализации: каркас, вершины, нормали и счётчик треугольников</span></li>
@@ -105,34 +106,47 @@
           <li><b>Камера</b><span>пирамида обзора со стороны и окно «вид игрока», перспектива и ортография, счётчик того, что рисуется</span></li>
           <li><b>Свет и материал</b><span>шероховатость, металличность, цвет, положение солнца и тени</span></li>
           <li><b>Игровой цикл</b><span>мини-игра на WASD с кристаллами, кадры в секунду, deltaTime и замедление времени</span></li>
+          <li><b>Вывод и источники</b><span>итог проекта и девять источников: документация three.js, Unity, Unreal и Godot, LearnOpenGL, MDN и Game Programming Patterns</span></li>
         </ol>
         <ul class="stack">
-          <li><b>Файлы</b>index.html — 303 строки, style.css — 313, десять JS-модулей — 1301: общий модуль сцены и по файлу на каждый урок.</li>
+          <li><b>Файлы</b>index.html — 369 строк, style.css — 364, десять JS-модулей — 1301: общий модуль сцены и по файлу на каждый урок.</li>
           <li><b>Библиотеки</b>three.js 0.170 подключается через importmap с jsDelivr, без сборщика. Модель робота — RobotExpressive из примеров three.js, лицензия CC0.</li>
           <li><b>Скорость</b>Сцена запускается за 400px до появления на экране и рисуется, только пока её видно. Плотность пикселей ограничена двумя.</li>
           <li><b>Адаптив</b>Одна точка перелома — 900px. На сенсорных экранах вместо подсказки про клавиатуру появляются кнопки-стрелки. При «уменьшить движение» декорации сами не вращаются.</li>
         </ul>
         <div class="shot-row shot-row--two">
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Увеличить: урок про трансформ">
+            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Увеличить: раздел «О проекте»">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#about</span>
+              <img src="../../../assets/img/cases/3d-space-in-games/sp-about-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-about-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-about-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Раздел «О проекте»: актуальность, цель и задачи со ссылками на уроки, справа паспорт проекта в рамке — тема, вид работы, продукт, технологии" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Увеличить: вывод и источники">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#conclusion</span>
+              <img src="../../../assets/img/cases/3d-space-in-games/sp-conclusion-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-conclusion-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-conclusion-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Раздел «Вывод»: итог проекта, справа список из девяти источников со ссылками" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="5" aria-label="Увеличить: урок про трансформ">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#transform</span>
               <img src="../../../assets/img/cases/3d-space-in-games/sp-transform-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-transform-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-transform-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 2: робот с кольцами поворота вокруг него и таблица позиции, поворота и масштаба" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Увеличить: урок про меш">
+            <button class="frame" type="button" data-gallery="shots" data-index="6" aria-label="Увеличить: урок про меш">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#mesh</span>
               <img src="../../../assets/img/cases/3d-space-in-games/sp-mesh-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-mesh-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-mesh-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 3: синий бублик с белым каркасом, жёлтыми вершинами и розовыми стрелками нормалей, под ним 560 треугольников и 280 вершин" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="5" aria-label="Увеличить: урок про камеру">
+            <button class="frame" type="button" data-gallery="shots" data-index="7" aria-label="Увеличить: урок про камеру">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#camera</span>
               <img src="../../../assets/img/cases/3d-space-in-games/sp-camera-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-camera-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-camera-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 5: жёлтые линии пирамиды обзора идут от камеры по сцене с деревьями и камнями, в углу окно «Вид игрока»" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="6" aria-label="Увеличить: мини-игра">
+            <button class="frame" type="button" data-gallery="shots" data-index="8" aria-label="Увеличить: мини-игра">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#loop</span>
               <img src="../../../assets/img/cases/3d-space-in-games/sp-loop-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-loop-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-loop-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 7: робот на поле с кристаллом, рядом код игрового цикла и табло: 60 кадров в секунду, dt 16,7 мс, кристаллы 1 из 5" loading="lazy">
             </button>
@@ -251,6 +265,8 @@
  {"src":"../../../assets/img/cases/3d-space-in-games/sp-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Первый экран: робот идёт к точке клика, 1440px"},
  {"src":"../../../assets/img/cases/3d-space-in-games/m-sp-hero","w":1179,"h":1977,"widths":[393,786],"caption":"Первый экран на телефоне, 393px"},
  {"src":"../../../assets/img/cases/3d-space-in-games/m-sp-coords","w":1179,"h":1977,"widths":[393,786],"caption":"Урок 1 на телефоне: координаты"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/sp-about-1440","w":1440,"h":900,"widths":[800,1440],"caption":"О проекте: актуальность, цель, задачи и паспорт проекта"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/sp-conclusion-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Вывод и девять источников"},
  {"src":"../../../assets/img/cases/3d-space-in-games/sp-transform-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Урок 2: манипулятор, как в редакторах движков"},
  {"src":"../../../assets/img/cases/3d-space-in-games/sp-mesh-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Урок 3: треугольники, вершины и нормали"},
  {"src":"../../../assets/img/cases/3d-space-in-games/sp-camera-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Урок 5: пирамида камеры и вид игрока"},

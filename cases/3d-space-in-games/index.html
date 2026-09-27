@@ -57,15 +57,15 @@
     <p class="case-lead reveal d1">An interactive textbook for a student’s project defence: seven short lessons on how games store and draw a three-dimensional world. Every lesson has a live 3D scene you can play with, and on the first screen a robot walks wherever you click. The site itself is in Russian.</p>
     <dl class="case-facts reveal d2">
       <div><dt>Type</dt><dd>Commissioned project for a student, defended with the top grade</dd></div>
-      <div><dt>Date</dt><dd>September 27, 2026, 1&nbsp;commit</dd></div>
-      <div><dt>Stack</dt><dd>HTML, CSS, JavaScript and three.js, no bundler · 1,917&nbsp;lines</dd></div>
+      <div><dt>Date</dt><dd>September 27, 2026, 2&nbsp;commits</dd></div>
+      <div><dt>Stack</dt><dd>HTML, CSS, JavaScript and three.js, no bundler · 2,034&nbsp;lines</dd></div>
       <div><dt>Links</dt><dd><a href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener">live page&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/3d-space-in-games" target="_blank" rel="noopener">code on GitHub&nbsp;↗</a></dd></div>
     </dl>
     <div class="shot-row reveal d3">
       <div>
         <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Enlarge: first screen on desktop">
           <span class="frame__bar" translate="no">strangehul1-design.github.io/3d-space-in-games/</span>
-          <img src="../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="First screen: a Russian headline, a 3D robot on a grid with X, Y and Z axes walking to a green marker, and the cursor’s coordinates below" fetchpriority="high">
+          <img src="../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="First screen: a “Project work” label, a Russian headline, a 3D robot on a grid with X, Y and Z axes walking to a green marker, and the cursor’s coordinates below" fetchpriority="high">
         </button>
         <p class="shot-caption">First screen: the robot walks to the clicked point, 1440px wide.</p>
       </div>
@@ -89,7 +89,7 @@
       <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Who it’s for and why</h2></div>
       <div class="case-block__content prose">
         <p>Commissioned by a student who needed a website for a project defence on how three-dimensional space works in games. The topic is abstract — coordinates, matrices, cameras — and easy to lose in words. The goal was to show every idea in a way you can touch: move a slider, turn the camera, click the floor.</p>
-        <p>So every lesson follows the same pattern: a short plain-language text on the left, a live scene on the right and a panel with numbers that change along with it. The student defended the project with the top grade.</p>
+        <p>So every lesson follows the same pattern: a short plain-language text on the left, a live scene on the right and a panel with numbers that change along with it. The site itself is laid out as a project paper: relevance, goal and tasks at the start, a conclusion and sources at the end, with every task linking to its lesson. The student defended the project with the top grade.</p>
       </div>
     </section>
 
@@ -97,7 +97,8 @@
       <div class="case-block__label"><p class="kicker">02</p><h2 id="what">What was built</h2></div>
       <div class="case-block__content">
         <ol class="structure" aria-label="Site sections">
-          <li><b>First screen</b><span>a robot on a grid with axes: click the floor and it walks there, while a panel shows the coordinates under the cursor</span></li>
+          <li><b>First screen</b><span>a “Project work” label and a robot on a grid with axes: click the floor and it walks there, while a panel shows the coordinates under the cursor</span></li>
+          <li><b>About the project</b><span>relevance, the goal, eight tasks linking to the lessons and a project passport styled as a drawing title block</span></li>
           <li><b>Coordinates</b><span>a crystal on X, Y and Z sliders, dashed projections onto the axes and a table of which axis points up in Unity, Unreal, Godot and Blender</span></li>
           <li><b>Transform</b><span>a gizmo like in game engine editors: move, rotate and scale with the W, E and R keys, plus a table of numbers</span></li>
           <li><b>Mesh</b><span>a sphere, a torus and a rock at six levels of detail: wireframe, vertices, normals and a triangle counter</span></li>
@@ -105,34 +106,47 @@
           <li><b>Camera</b><span>the view frustum from the side and a “player view” window, perspective and orthographic modes, a counter of what gets drawn</span></li>
           <li><b>Light and material</b><span>roughness, metalness, colour, the sun’s position and shadows</span></li>
           <li><b>Game loop</b><span>a WASD mini game with crystals, frames per second, deltaTime and slow motion</span></li>
+          <li><b>Conclusion and sources</b><span>the project’s summary and nine sources: three.js, Unity, Unreal and Godot docs, LearnOpenGL, MDN and Game Programming Patterns</span></li>
         </ol>
         <ul class="stack">
-          <li><b>Files</b>index.html — 303 lines, style.css — 313, ten JS modules — 1,301: a shared scene module and one file per lesson.</li>
+          <li><b>Files</b>index.html — 369 lines, style.css — 364, ten JS modules — 1,301: a shared scene module and one file per lesson.</li>
           <li><b>Libraries</b>three.js 0.170 via an importmap from jsDelivr, no bundler. The robot is RobotExpressive from the three.js examples, CC0 licence.</li>
           <li><b>Speed</b>A scene is created 400px before it scrolls into view and drawn only while it is visible. Pixel density is capped at 2.</li>
           <li><b>Responsive</b>One breakpoint at 900px. On touch screens arrow buttons replace the keyboard hint. With “reduce motion” the decorations stop spinning on their own.</li>
         </ul>
         <div class="shot-row shot-row--two">
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Enlarge: the transform lesson">
+            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Enlarge: the About the project section">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#about</span>
+              <img src="../../assets/img/cases/3d-space-in-games/sp-about-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-about-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-about-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="About the project: relevance, goal and tasks linking to the lessons, with a framed project passport on the right — topic, type of work, product, technologies" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Enlarge: conclusion and sources">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#conclusion</span>
+              <img src="../../assets/img/cases/3d-space-in-games/sp-conclusion-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-conclusion-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-conclusion-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Conclusion section: the project’s summary with a list of nine linked sources on the right" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="5" aria-label="Enlarge: the transform lesson">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#transform</span>
               <img src="../../assets/img/cases/3d-space-in-games/sp-transform-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-transform-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-transform-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Lesson 2: the robot with rotation rings around it and a table of position, rotation and scale" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Enlarge: the mesh lesson">
+            <button class="frame" type="button" data-gallery="shots" data-index="6" aria-label="Enlarge: the mesh lesson">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#mesh</span>
               <img src="../../assets/img/cases/3d-space-in-games/sp-mesh-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-mesh-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-mesh-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Lesson 3: a blue torus with a white wireframe, yellow vertices and pink normal arrows; 560 triangles and 280 vertices below" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="5" aria-label="Enlarge: the camera lesson">
+            <button class="frame" type="button" data-gallery="shots" data-index="7" aria-label="Enlarge: the camera lesson">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#camera</span>
               <img src="../../assets/img/cases/3d-space-in-games/sp-camera-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-camera-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-camera-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Lesson 5: yellow frustum lines run from the camera across a scene with trees and rocks, with a player view window in the corner" loading="lazy">
             </button>
           </div>
           <div>
-            <button class="frame" type="button" data-gallery="shots" data-index="6" aria-label="Enlarge: the mini game">
+            <button class="frame" type="button" data-gallery="shots" data-index="8" aria-label="Enlarge: the mini game">
               <span class="frame__bar" translate="no">…/3d-space-in-games/#loop</span>
               <img src="../../assets/img/cases/3d-space-in-games/sp-loop-1440-800.jpg" srcset="../../assets/img/cases/3d-space-in-games/sp-loop-1440-800.jpg 800w, ../../assets/img/cases/3d-space-in-games/sp-loop-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Lesson 7: the robot on a field with a crystal, the game loop code next to it and a panel: 60 frames per second, dt 16.7 ms, 1 of 5 crystals" loading="lazy">
             </button>
@@ -251,6 +265,8 @@
  {"src":"../../assets/img/cases/3d-space-in-games/sp-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"First screen: the robot walks to the clicked point, 1440px"},
  {"src":"../../assets/img/cases/3d-space-in-games/m-sp-hero","w":1179,"h":1977,"widths":[393,786],"caption":"First screen on a phone, 393px"},
  {"src":"../../assets/img/cases/3d-space-in-games/m-sp-coords","w":1179,"h":1977,"widths":[393,786],"caption":"Lesson 1 on a phone: coordinates"},
+ {"src":"../../assets/img/cases/3d-space-in-games/sp-about-1440","w":1440,"h":900,"widths":[800,1440],"caption":"About the project: relevance, goal, tasks and the project passport"},
+ {"src":"../../assets/img/cases/3d-space-in-games/sp-conclusion-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Conclusion and nine sources"},
  {"src":"../../assets/img/cases/3d-space-in-games/sp-transform-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Lesson 2: a transform gizmo, like in game engine editors"},
  {"src":"../../assets/img/cases/3d-space-in-games/sp-mesh-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Lesson 3: triangles, vertices and normals"},
  {"src":"../../assets/img/cases/3d-space-in-games/sp-camera-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Lesson 5: the camera frustum and the player’s view"},
