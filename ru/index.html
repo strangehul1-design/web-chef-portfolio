@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Арсений Асянов — Digital для бизнеса</title>
-<meta name="description" content="Арсений Асянов — дизайнер и разработчик. Портфолио с живыми ссылками и разбором работ: Web Chef Portfolio, сайт кондитерской «ТОРТ по любви», концепт фитнес-студии PULSE и учебный сайт про HTML, CSS и JavaScript.">
+<meta name="description" content="Арсений Асянов — дизайнер и разработчик. Портфолио с живыми ссылками и разбором работ: Web Chef Portfolio, сайт кондитерской «ТОРТ по любви», концепт фитнес-студии PULSE, учебный сайт про HTML, CSS и JavaScript и интерактивный учебник о 3D-мире в играх.">
 <meta name="theme-color" content="#E9EDF3">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Арсений Асянов — Digital для бизнеса">
@@ -125,6 +125,12 @@
           <a class="index__name" href="#basics">Три кита веба</a>
           <span class="index__url" translate="no">…/html-css-js-basics/</span>
           <a class="index__open" href="https://strangehul1-design.github.io/html-css-js-basics/" target="_blank" rel="noopener" aria-label="Открыть «Три кита веба» в новой вкладке"><span class="label">Открыть</span> ↗</a>
+        </li>
+        <li class="index__row">
+          <span class="index__num">05</span>
+          <a class="index__name" href="#space">3D-мир в играх</a>
+          <span class="index__url" translate="no">…/3d-space-in-games/</span>
+          <a class="index__open" href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener" aria-label="Открыть «Как устроен 3D-мир в играх» в новой вкладке"><span class="label">Открыть</span> ↗</a>
         </li>
       </ol>
 
@@ -269,6 +275,42 @@
             </ul>
           </div>
         </article>
+
+        <!-- 05 -->
+        <article class="exhibit" id="space" aria-labelledby="space-title">
+          <div class="exhibit__meta">
+            <span class="exhibit__num reveal" aria-hidden="true">05</span>
+            <p class="kicker reveal">Проектная работа на заказ</p>
+            <h3 class="exhibit__title reveal d1" id="space-title">Как устроен 3D-мир в играх</h3>
+            <p class="exhibit__desc reveal d1">Интерактивный учебник для защиты студенческого проекта: семь уроков о 3D-пространстве в играх, в каждом живая сцена — координаты, меш, камера, свет, игровой цикл. Проект защищён на «отлично».</p>
+            <dl class="spec reveal d2">
+              <div><dt>Адрес</dt><dd class="mono" translate="no">strangehul1-design.github.io/3d-space-in-games/</dd></div>
+              <div><dt>Заказчик</dt><dd>Студент, сайт для защиты проекта</dd></div>
+              <div><dt>Стек</dt><dd>HTML, CSS, JavaScript и three.js — без сборщика</dd></div>
+              <div><dt>Сроки</dt><dd>27 сентября 2026</dd></div>
+            </dl>
+            <div class="actions reveal d2">
+              <a class="btn btn--primary" href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener">Открыть сайт <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="btn btn--line" href="cases/3d-space-in-games/">Разбор <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="exhibit__media">
+            <div class="shots">
+              <button class="frame wipe" type="button" data-gallery="space" data-index="0" aria-label="Увеличить скриншот: первый экран «Как устроен 3D-мир в играх» на компьютере">
+                <span class="frame__bar" translate="no">…/3d-space-in-games/</span>
+                <img src="../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg" srcset="../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg 800w, ../assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg 1440w" sizes="(max-width: 1000px) 100vw, 58vw" width="1440" height="900" alt="Первый экран: пометка «Проектная работа», заголовок «Как устроен 3D-мир в играх», справа 3D-робот на сетке с осями X, Y, Z идёт к зелёной метке, внизу координаты под курсором" loading="lazy" decoding="async">
+              </button>
+              <button class="frame frame--phone wipe" type="button" data-gallery="space" data-index="1" aria-label="Увеличить скриншот: «Как устроен 3D-мир в играх» на телефоне">
+                <img src="../assets/img/cases/3d-space-in-games/m-sp-hero-393.jpg" srcset="../assets/img/cases/3d-space-in-games/m-sp-hero-393.jpg 393w, ../assets/img/cases/3d-space-in-games/m-sp-hero-786.jpg 786w" sizes="(max-width: 760px) 30vw, 15vw" width="1179" height="1977" alt="Первый экран на телефоне" loading="lazy" decoding="async">
+              </button>
+            </div>
+            <ul class="facts reveal">
+              <li><b>Клик по полу</b>Робот идёт туда, куда кликнули: луч из камеры ищет точку на полу — так в играх работают клики.</li>
+              <li><b>Камера изнутри</b>Пирамида обзора видна со стороны, рядом — то, что видит игрок. Что не попало в кадр, становится серым.</li>
+              <li><b>Мини-игра</b>Робот на WASD собирает кристаллы, а табло показывает кадры в секунду, deltaTime и координаты.</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -333,6 +375,15 @@
   {"src": "../assets/img/cases/html-css-js-basics/bs-cssdemo-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Демонстрация CSS: кнопки и получившийся код"},
   {"src": "../assets/img/cases/html-css-js-basics/bs-sandbox-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Песочница: редактор и живое превью"},
   {"src": "../assets/img/cases/html-css-js-basics/bs-quiz-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Мини-тест с пояснениями"}
+ ]},
+ "space": {"title": "Как устроен 3D-мир в играх", "images": [
+  {"src": "../assets/img/cases/3d-space-in-games/sp-hero-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Первый экран: робот идёт к точке клика, 1440px"},
+  {"src": "../assets/img/cases/3d-space-in-games/m-sp-hero", "w": 1179, "h": 1977, "widths": [393, 786], "caption": "Первый экран на телефоне, 393px"},
+  {"src": "../assets/img/cases/3d-space-in-games/sp-about-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "О проекте: актуальность, цель, задачи и паспорт проекта"},
+  {"src": "../assets/img/cases/3d-space-in-games/sp-transform-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Урок 2: манипулятор, как в редакторах движков"},
+  {"src": "../assets/img/cases/3d-space-in-games/sp-mesh-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Урок 3: треугольники, вершины и нормали"},
+  {"src": "../assets/img/cases/3d-space-in-games/sp-camera-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Урок 5: пирамида камеры и вид игрока"},
+  {"src": "../assets/img/cases/3d-space-in-games/sp-loop-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Урок 7: мини-игра и игровой цикл"}
  ]}
 }
 </script>

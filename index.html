@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Arseny Asyanov — Digital for Business</title>
-<meta name="description" content="Arseny Asyanov, designer and developer. A portfolio with live links and a write-up for each project: Web Chef Portfolio, the ТОРТ по любви bakery website, the PULSE fitness studio concept and an educational site about HTML, CSS and JavaScript.">
+<meta name="description" content="Arseny Asyanov, designer and developer. A portfolio with live links and a write-up for each project: Web Chef Portfolio, the ТОРТ по любви bakery website, the PULSE fitness studio concept, an educational site about HTML, CSS and JavaScript and an interactive textbook on 3D worlds in games.">
 <meta name="theme-color" content="#E9EDF3">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Arseny Asyanov — Digital for Business">
@@ -125,6 +125,12 @@
           <a class="index__name" href="#basics">Three Pillars of the Web</a>
           <span class="index__url" translate="no">…/html-css-js-basics/</span>
           <a class="index__open" href="https://strangehul1-design.github.io/html-css-js-basics/" target="_blank" rel="noopener" aria-label="Open Three Pillars of the Web in a new tab"><span class="label">Open</span> ↗</a>
+        </li>
+        <li class="index__row">
+          <span class="index__num">05</span>
+          <a class="index__name" href="#space">3D Worlds in Games</a>
+          <span class="index__url" translate="no">…/3d-space-in-games/</span>
+          <a class="index__open" href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener" aria-label="Open How 3D Worlds Work in Games in a new tab"><span class="label">Open</span> ↗</a>
         </li>
       </ol>
 
@@ -269,6 +275,42 @@
             </ul>
           </div>
         </article>
+
+        <!-- 05 -->
+        <article class="exhibit" id="space" aria-labelledby="space-title">
+          <div class="exhibit__meta">
+            <span class="exhibit__num reveal" aria-hidden="true">05</span>
+            <p class="kicker reveal">Commissioned student project · in Russian</p>
+            <h3 class="exhibit__title reveal d1" id="space-title">How 3D Worlds Work in Games</h3>
+            <p class="exhibit__desc reveal d1">An interactive textbook for a student’s project defence: seven lessons on 3D space in games, each with a live scene — coordinates, meshes, the camera, light and the game loop. The student defended the project with the top grade.</p>
+            <dl class="spec reveal d2">
+              <div><dt>Address</dt><dd class="mono" translate="no">strangehul1-design.github.io/3d-space-in-games/</dd></div>
+              <div><dt>Client</dt><dd>A student, for a project defence</dd></div>
+              <div><dt>Stack</dt><dd>HTML, CSS, JavaScript and three.js — no bundler</dd></div>
+              <div><dt>Date</dt><dd>September 27, 2026</dd></div>
+            </dl>
+            <div class="actions reveal d2">
+              <a class="btn btn--primary" href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener">Open site <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="btn btn--line" href="cases/3d-space-in-games/">Write-up <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="exhibit__media">
+            <div class="shots">
+              <button class="frame wipe" type="button" data-gallery="space" data-index="0" aria-label="Enlarge screenshot: How 3D Worlds Work in Games first screen on desktop">
+                <span class="frame__bar" translate="no">…/3d-space-in-games/</span>
+                <img src="assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg" srcset="assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg 800w, assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg 1440w" sizes="(max-width: 1000px) 100vw, 58vw" width="1440" height="900" alt="First screen: a “Project work” label, a Russian headline, a 3D robot on a grid with X, Y and Z axes walking to a green marker, and the cursor’s coordinates below" loading="lazy" decoding="async">
+              </button>
+              <button class="frame frame--phone wipe" type="button" data-gallery="space" data-index="1" aria-label="Enlarge screenshot: How 3D Worlds Work in Games on a phone">
+                <img src="assets/img/cases/3d-space-in-games/m-sp-hero-393.jpg" srcset="assets/img/cases/3d-space-in-games/m-sp-hero-393.jpg 393w, assets/img/cases/3d-space-in-games/m-sp-hero-786.jpg 786w" sizes="(max-width: 760px) 30vw, 15vw" width="1179" height="1977" alt="First screen on a phone" loading="lazy" decoding="async">
+              </button>
+            </div>
+            <ul class="facts reveal">
+              <li><b>Click to walk</b>The robot walks wherever you click: a ray from the camera finds the point on the floor — that is how clicks work in games.</li>
+              <li><b>Inside the camera</b>The view frustum is shown from the side, next to what the player sees. Anything outside the frame turns grey.</li>
+              <li><b>Mini game</b>Steer the robot with WASD to collect crystals while the panel shows frames per second, deltaTime and coordinates.</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -333,6 +375,15 @@
   {"src": "assets/img/cases/html-css-js-basics/bs-cssdemo-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "CSS demo: buttons and the resulting code"},
   {"src": "assets/img/cases/html-css-js-basics/bs-sandbox-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Sandbox: editor and live preview"},
   {"src": "assets/img/cases/html-css-js-basics/bs-quiz-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Mini quiz with explanations"}
+ ]},
+ "space": {"title": "How 3D Worlds Work in Games", "images": [
+  {"src": "assets/img/cases/3d-space-in-games/sp-hero-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "First screen: the robot walks to the clicked point, 1440px"},
+  {"src": "assets/img/cases/3d-space-in-games/m-sp-hero", "w": 1179, "h": 1977, "widths": [393, 786], "caption": "First screen on a phone, 393px"},
+  {"src": "assets/img/cases/3d-space-in-games/sp-about-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "About the project: relevance, goal, tasks and the project passport"},
+  {"src": "assets/img/cases/3d-space-in-games/sp-transform-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Lesson 2: a transform gizmo, like in game engine editors"},
+  {"src": "assets/img/cases/3d-space-in-games/sp-mesh-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Lesson 3: triangles, vertices and normals"},
+  {"src": "assets/img/cases/3d-space-in-games/sp-camera-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Lesson 5: the camera frustum and the player’s view"},
+  {"src": "assets/img/cases/3d-space-in-games/sp-loop-1440", "w": 1440, "h": 900, "widths": [800, 1440], "caption": "Lesson 7: the mini game and the game loop"}
  ]}
 }
 </script>
