@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Как устроен 3D-мир в играх — разбор · Арсений Асянов</title>
+<meta name="description" content="Разбор проектной работы на заказ: интерактивный учебник о 3D-пространстве в играх для защиты студенческого проекта. Рейкаст, пирамида камеры, игровой цикл, семь сцен на three.js и что стоит доработать.">
+<meta name="theme-color" content="#E9EDF3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как устроен 3D-мир в играх — разбор">
+<meta property="og:image" content="https://strangehul1-design.github.io/web-chef-portfolio/assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg">
+<link rel="canonical" href="https://strangehul1-design.github.io/web-chef-portfolio/ru/cases/3d-space-in-games/">
+<link rel="alternate" hreflang="en" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/3d-space-in-games/">
+<link rel="alternate" hreflang="ru" href="https://strangehul1-design.github.io/web-chef-portfolio/ru/cases/3d-space-in-games/">
+<link rel="alternate" hreflang="x-default" href="https://strangehul1-design.github.io/web-chef-portfolio/cases/3d-space-in-games/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E9EDF3'/%3E%3Cg fill='%230B1220'%3E%3Ccircle cx='18' cy='18' r='4'/%3E%3Ccircle cx='32' cy='18' r='4'/%3E%3Ccircle cx='46' cy='18' r='4'/%3E%3Ccircle cx='18' cy='32' r='4'/%3E%3Ccircle cx='46' cy='32' r='4'/%3E%3Ccircle cx='18' cy='46' r='4'/%3E%3Ccircle cx='32' cy='46' r='4'/%3E%3Ccircle cx='46' cy='46' r='4'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%232F5BFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500&family=Unbounded:wght@600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/case.css">
+<script>document.documentElement.className = 'js';try{var s=JSON.parse(sessionStorage.getItem('webchef-lang-restore')||'null');if(s&&s.url.split('?')[0]===location.href.split('#')[0].split('?')[0]&&Date.now()-s.t<15000){document.documentElement.classList.add('is-restoring');setTimeout(function(){document.documentElement.classList.remove('is-restoring')},1500)}}catch(e){}</script>
+<script src="../../../assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">К разбору</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../" translate="no"><span>DIGITAL ДЛЯ БИЗНЕСА</span><span class="sep"> · </span><span>АРСЕНИЙ АСЯНОВ</span></a>
+    <div class="site-header__right">
+      <nav aria-label="Разделы">
+        <ul class="site-nav">
+          <li><a href="../../#works">Работы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Язык">
+        <a class="lang-switch__opt" href="../../../cases/3d-space-in-games/" hreflang="en" lang="en" data-lang-switch aria-label="English version">EN</a>
+        <span class="lang-switch__opt" aria-current="true">RU</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap case-hero">
+    <div class="case-head reveal">
+      <span class="case-num" aria-hidden="true">05</span>
+      <div class="case-title-wrap">
+        <p class="kicker">Разбор · Проектная работа на заказ</p>
+        <h1 class="case-title">Как устроен 3D-мир в играх</h1>
+      </div>
+    </div>
+    <p class="case-lead reveal d1">Интерактивный учебник для защиты студенческого проекта: семь коротких уроков о том, как игры хранят и рисуют трёхмерный мир. В каждом уроке живая 3D-сцена, которую можно покрутить руками, а на первом экране робот идёт туда, куда кликнули.</p>
+    <dl class="case-facts reveal d2">
+      <div><dt>Тип</dt><dd>Проектная работа на заказ для студента, защищена на «отлично»</dd></div>
+      <div><dt>Сроки</dt><dd>27 сентября 2026, 1&nbsp;коммит</dd></div>
+      <div><dt>Стек</dt><dd>HTML, CSS, JavaScript и three.js без сборщика · 1917&nbsp;строк</dd></div>
+      <div><dt>Ссылки</dt><dd><a href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener">живая страница&nbsp;↗</a><br><a href="https://github.com/strangehul1-design/3d-space-in-games" target="_blank" rel="noopener">код на GitHub&nbsp;↗</a></dd></div>
+    </dl>
+    <div class="shot-row reveal d3">
+      <div>
+        <button class="frame" type="button" data-gallery="shots" data-index="0" aria-label="Увеличить: первый экран на компьютере">
+          <span class="frame__bar" translate="no">strangehul1-design.github.io/3d-space-in-games/</span>
+          <img src="../../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-hero-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-hero-1440-1440.jpg 1440w" sizes="(max-width: 1100px) 100vw, 55vw" width="1440" height="900" alt="Первый экран: заголовок «Как устроен 3D-мир в играх», справа 3D-робот на сетке с осями X, Y, Z идёт к зелёной метке, внизу координаты под курсором" fetchpriority="high">
+        </button>
+        <p class="shot-caption">Первый экран: робот идёт к точке клика, ширина 1440px.</p>
+      </div>
+      <div>
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="1" aria-label="Увеличить: первый экран на телефоне">
+          <img src="../../../assets/img/cases/3d-space-in-games/m-sp-hero-393.jpg" srcset="../../../assets/img/cases/3d-space-in-games/m-sp-hero-393.jpg 393w, ../../../assets/img/cases/3d-space-in-games/m-sp-hero-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Первый экран на телефоне шириной 393px" loading="lazy">
+        </button>
+        <p class="shot-caption">Телефон, 393px.</p>
+      </div>
+      <div>
+        <button class="frame frame--phone" type="button" data-gallery="shots" data-index="2" aria-label="Увеличить: урок про координаты на телефоне">
+          <img src="../../../assets/img/cases/3d-space-in-games/m-sp-coords-393.jpg" srcset="../../../assets/img/cases/3d-space-in-games/m-sp-coords-393.jpg 393w, ../../../assets/img/cases/3d-space-in-games/m-sp-coords-786.jpg 786w" sizes="(max-width: 600px) 50vw, 22vw" width="1179" height="1977" alt="Урок про координаты на телефоне: кристалл над сеткой, ползунки X, Y, Z и строка position" loading="lazy">
+        </button>
+        <p class="shot-caption">Урок 1 на телефоне.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap case-body">
+    <section class="case-block reveal" aria-labelledby="why">
+      <div class="case-block__label"><p class="kicker">01</p><h2 id="why">Для кого и зачем</h2></div>
+      <div class="case-block__content prose">
+        <p>Заказ от студента: ему нужен был сайт для защиты проекта о том, как устроено трёхмерное пространство в играх. Тема абстрактная — координаты, матрицы, камеры, — и на словах её легко потерять. Задача была показать каждое понятие так, чтобы его можно было потрогать: подвинуть ползунок, повернуть камеру, кликнуть по полу.</p>
+        <p>Поэтому каждый урок устроен одинаково: слева короткий текст простым языком, справа живая сцена и табло с цифрами, которые меняются вместе с ней. Проект защищён на «отлично».</p>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="what">
+      <div class="case-block__label"><p class="kicker">02</p><h2 id="what">Что сделано</h2></div>
+      <div class="case-block__content">
+        <ol class="structure" aria-label="Разделы сайта">
+          <li><b>Первый экран</b><span>робот на сетке с осями: кликаешь по полу — идёт туда, а табло показывает координаты под курсором</span></li>
+          <li><b>Координаты</b><span>кристалл на ползунках X, Y, Z, пунктирные проекции на оси и таблица «какая ось смотрит вверх» в Unity, Unreal, Godot и Blender</span></li>
+          <li><b>Трансформ</b><span>манипулятор, как в редакторах движков: перемещение, поворот и масштаб по клавишам W, E, R и таблица чисел</span></li>
+          <li><b>Меш</b><span>сфера, бублик и камень в шести уровнях детализации: каркас, вершины, нормали и счётчик треугольников</span></li>
+          <li><b>Иерархия</b><span>солнце, планета и луна: локальные координаты луны не меняются, а мировые рисуют петлю</span></li>
+          <li><b>Камера</b><span>пирамида обзора со стороны и окно «вид игрока», перспектива и ортография, счётчик того, что рисуется</span></li>
+          <li><b>Свет и материал</b><span>шероховатость, металличность, цвет, положение солнца и тени</span></li>
+          <li><b>Игровой цикл</b><span>мини-игра на WASD с кристаллами, кадры в секунду, deltaTime и замедление времени</span></li>
+        </ol>
+        <ul class="stack">
+          <li><b>Файлы</b>index.html — 303 строки, style.css — 313, десять JS-модулей — 1301: общий модуль сцены и по файлу на каждый урок.</li>
+          <li><b>Библиотеки</b>three.js 0.170 подключается через importmap с jsDelivr, без сборщика. Модель робота — RobotExpressive из примеров three.js, лицензия CC0.</li>
+          <li><b>Скорость</b>Сцена запускается за 400px до появления на экране и рисуется, только пока её видно. Плотность пикселей ограничена двумя.</li>
+          <li><b>Адаптив</b>Одна точка перелома — 900px. На сенсорных экранах вместо подсказки про клавиатуру появляются кнопки-стрелки. При «уменьшить движение» декорации сами не вращаются.</li>
+        </ul>
+        <div class="shot-row shot-row--two">
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="3" aria-label="Увеличить: урок про трансформ">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#transform</span>
+              <img src="../../../assets/img/cases/3d-space-in-games/sp-transform-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-transform-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-transform-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 2: робот с кольцами поворота вокруг него и таблица позиции, поворота и масштаба" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="4" aria-label="Увеличить: урок про меш">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#mesh</span>
+              <img src="../../../assets/img/cases/3d-space-in-games/sp-mesh-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-mesh-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-mesh-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 3: синий бублик с белым каркасом, жёлтыми вершинами и розовыми стрелками нормалей, под ним 560 треугольников и 280 вершин" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="5" aria-label="Увеличить: урок про камеру">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#camera</span>
+              <img src="../../../assets/img/cases/3d-space-in-games/sp-camera-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-camera-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-camera-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 5: жёлтые линии пирамиды обзора идут от камеры по сцене с деревьями и камнями, в углу окно «Вид игрока»" loading="lazy">
+            </button>
+          </div>
+          <div>
+            <button class="frame" type="button" data-gallery="shots" data-index="6" aria-label="Увеличить: мини-игра">
+              <span class="frame__bar" translate="no">…/3d-space-in-games/#loop</span>
+              <img src="../../../assets/img/cases/3d-space-in-games/sp-loop-1440-800.jpg" srcset="../../../assets/img/cases/3d-space-in-games/sp-loop-1440-800.jpg 800w, ../../../assets/img/cases/3d-space-in-games/sp-loop-1440-1440.jpg 1440w" sizes="(max-width: 900px) 100vw, 35vw" width="1440" height="900" alt="Урок 7: робот на поле с кристаллом, рядом код игрового цикла и табло: 60 кадров в секунду, dt 16,7 мс, кристаллы 1 из 5" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="decisions">
+      <div class="case-block__label"><p class="kicker">03</p><h2 id="decisions">Решения, на которые стоит посмотреть</h2></div>
+      <div class="case-block__content">
+        <ul class="decisions">
+          <li class="decision">
+            <h3>Клик по полу — это рейкаст</h3>
+            <p>Координаты мыши переводятся в диапазон от −1 до 1, из камеры через эту точку выпускается луч, и сайт ищет, где он пересёк пол. Клик от поворота камеры отличается по расстоянию: если между нажатием и отпусканием мышь ушла дальше 6px, это был поворот, и робот никуда не идёт.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/hero.js#L57-L66" target="_blank" rel="noopener"><code translate="no">hero.js:57–66</code> луч ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/hero.js#L80-L94" target="_blank" rel="noopener"><code translate="no">:80–94</code> клик ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Цвет — это ось</h3>
+            <p>X красная <b>#e5484d</b>, Y зелёная <b>#2f9e57</b>, Z синяя <b>#2f6feb</b> — как во всех 3D-редакторах. Эти три цвета — единственные акценты на странице: ими подписаны оси в сценах, покрашены ползунки, цифры на табло и буквы в тексте уроков. По цвету сразу понятно, о какой координате речь.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/style.css#L14-L17" target="_blank" rel="noopener"><code translate="no">style.css:14–17</code> ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/core.js#L8-L9" target="_blank" rel="noopener"><code translate="no">core.js:8–9</code> в 3D ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Восемь сцен, один цикл</h3>
+            <p>На странице восемь 3D-окон, но цикл отрисовки один. Сцена создаётся, когда до неё осталось 400px прокрутки, а рисуется, только пока её видно, — поэтому страница не тормозит и на ноутбуке со встроенной графикой. Время кадра ограничено 0,1 с: после переключения вкладки робот не «телепортируется».</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/core.js#L17-L31" target="_blank" rel="noopener"><code translate="no">core.js:17–31</code> цикл ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/main.js#L35-L47" target="_blank" rel="noopener"><code translate="no">main.js:35–47</code> запуск ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Камера показывает саму себя</h3>
+            <p>В уроке про камеру на одном холсте два вида: со стороны и глазами игрока. Второй рисуется через <b>scissor</b> ровно под рамкой из CSS. Каждый кадр строится пирамида обзора и проверяется каждый объект: что в неё не попало, красится серым, а табло считает, сколько объектов рисуется. Корпус камеры и линии пирамиды лежат на отдельном слое, поэтому игрок их не видит.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/lesson-camera.js#L102-L119" target="_blank" rel="noopener"><code translate="no">lesson-camera.js:102–119</code> пирамида ↗</a></li>
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/lesson-camera.js#L121-L138" target="_blank" rel="noopener"><code translate="no">:121–138</code> два вида ↗</a></li>
+            </ul>
+          </li>
+          <li class="decision">
+            <h3>Один робот на все сцены</h3>
+            <p>Модель скачивается один раз, а каждая сцена получает свою копию со своим скелетом. Высота считается только по жёстким частям тела: у кистей сырые размеры в «единицах скелета» в сто раз больше, и с ними робот сжимался до точки. Если первый адрес модели не отвечает, берётся второй, а без сети вместо робота появляется фигура из кубиков.</p>
+            <ul class="evidence" aria-label="Код">
+              <li><a href="https://github.com/strangehul1-design/3d-space-in-games/blob/main/js/core.js#L184-L235" target="_blank" rel="noopener"><code translate="no">core.js:184–235</code> ↗</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="limits">
+          <h3>Что стоит доработать</h3>
+          <ul>
+            <li>three.js и модель робота грузятся со сторонних серверов, jsDelivr и threejs.org. Без интернета 3D не запустится совсем.</li>
+            <li>На телефоне касание 3D-окна поворачивает камеру, а не листает страницу: прокручивать приходится за текст.</li>
+            <li>Приблизить сцену нельзя: колесо мыши отдано прокрутке страницы, а жест «щипок» выключен вместе с ним.</li>
+            <li>У «камня» в уроке про меш в каждой вершине торчит пучок нормалей — по одной на каждую плоскую грань. В тексте урока это не объяснено.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-block reveal" aria-labelledby="verify">
+      <div class="case-block__label"><p class="kicker">04</p><h2 id="verify">Как проверить</h2></div>
+      <div class="case-block__content">
+        <ul class="checklist">
+          <li>Кликнуть по полу на первом экране — робот пойдёт в эту точку <a href="https://strangehul1-design.github.io/3d-space-in-games/" target="_blank" rel="noopener">первый экран ↗</a></li>
+          <li>Сузить угол обзора камеры и посмотреть, как объекты становятся серыми <a href="https://strangehul1-design.github.io/3d-space-in-games/#camera" target="_blank" rel="noopener">камера ↗</a></li>
+          <li>Собрать пять кристаллов на WASD и замедлить время ползунком <a href="https://strangehul1-design.github.io/3d-space-in-games/#loop" target="_blank" rel="noopener">мини-игра ↗</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="case-nav reveal" aria-label="Другие разборы">
+      <a href="../html-css-js-basics/" rel="prev"><small>← Разбор 04</small><strong>Три кита веба</strong></a>
+      <a href="../big-portfolio/" rel="next"><small>Разбор 01 →</small><strong>Web Chef Portfolio</strong></a>
+    </nav>
+  </div>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="kicker reveal">Связь со мной</p>
+      <h2 class="contact__title reveal d1" id="contact-title">Есть <em>задача?</em><br>Пиши.</h2>
+      <ul class="contact__list reveal d2">
+        <li><a class="contact__item" href="https://t.me/tacokinggl1"><span class="contact__label">Telegram</span><span class="contact__value">@tacokinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">ВКонтакте</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+        <li><a class="contact__item" href="mailto:digitalgl1@mail.ru"><span class="contact__label">Email</span><span class="contact__value">digitalgl1@mail.ru</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
+      </ul>
+      <footer class="contact__foot">
+        <span>DIGITAL ДЛЯ БИЗНЕСА · АРСЕНИЙ АСЯНОВ</span>
+        <span>© 2026</span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+  <div class="lb-top">
+    <p class="lb-title" id="lb-title"></p>
+    <p class="lb-counter" aria-live="polite"></p>
+    <button class="lb-close" type="button" aria-label="Закрыть">×</button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" type="button" aria-label="Предыдущий скриншот">←</button>
+    <div class="lb-viewport"><div class="lb-track"><img class="lb-img" alt="" decoding="async"></div></div>
+    <button class="lb-nav lb-next" type="button" aria-label="Следующий скриншот">→</button>
+  </div>
+  <p class="lb-caption"></p>
+  <div class="lb-dots"></div>
+</dialog>
+
+<script type="application/json" id="gallery-data">
+{"shots":{"title":"Как устроен 3D-мир в играх","images":[
+ {"src":"../../../assets/img/cases/3d-space-in-games/sp-hero-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Первый экран: робот идёт к точке клика, 1440px"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/m-sp-hero","w":1179,"h":1977,"widths":[393,786],"caption":"Первый экран на телефоне, 393px"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/m-sp-coords","w":1179,"h":1977,"widths":[393,786],"caption":"Урок 1 на телефоне: координаты"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/sp-transform-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Урок 2: манипулятор, как в редакторах движков"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/sp-mesh-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Урок 3: треугольники, вершины и нормали"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/sp-camera-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Урок 5: пирамида камеры и вид игрока"},
+ {"src":"../../../assets/img/cases/3d-space-in-games/sp-loop-1440","w":1440,"h":900,"widths":[800,1440],"caption":"Урок 7: мини-игра и игровой цикл"}
+]}}</script>
+</body>
+</html>
