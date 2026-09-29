@@ -24,6 +24,7 @@
 <script>document.documentElement.className = 'js';try{var s=JSON.parse(sessionStorage.getItem('webchef-lang-restore')||'null');if(s&&s.url.split('?')[0]===location.href.split('#')[0].split('?')[0]&&Date.now()-s.t<15000){document.documentElement.classList.add('is-restoring');setTimeout(function(){document.documentElement.classList.remove('is-restoring')},1500)}}catch(e){}</script>
 <script type="module" src="../assets/js/hero-field.js"></script>
 <script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/review.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#works">К работам</a>
@@ -66,6 +67,8 @@
         <div class="actions">
           <a class="btn btn--primary" href="#works">Смотреть работы <span class="arrow arrow--down" aria-hidden="true">↓</span></a>
           <a class="btn btn--line" href="#contact">Написать</a>
+          <a class="btn btn--line" href="https://t.me/ALLABOUTGL1" target="_blank" rel="noopener">Telegram-канал <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn--line" href="#review">Оставить отзыв <span class="arrow arrow--down" aria-hidden="true">↓</span></a>
         </div>
       </div>
 
@@ -324,6 +327,58 @@
         <li><a class="contact__item" href="https://vk.com/taco_kinggl1"><span class="contact__label">ВКонтакте</span><span class="contact__value">vk.com/taco_kinggl1</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
         <li><a class="contact__item" href="mailto:digitalgl1@mail.ru"><span class="contact__label">Email</span><span class="contact__value">digitalgl1@mail.ru</span><span class="contact__arrow" aria-hidden="true">→</span></a></li>
       </ul>
+      <div class="review reveal d3" id="review" aria-labelledby="review-title">
+        <div class="review__intro">
+          <p class="contact__label">Отзыв</p>
+          <h3 class="review__title" id="review-title">Работали со&nbsp;мной?</h3>
+          <p class="review__lead">Оставьте отзыв - это займёт минуту. С вашего согласия опубликую его в <a href="https://t.me/gl1reviewsandsuggestions">Telegram-канале с отзывами</a>.</p>
+          <div class="actions review__actions"><a class="btn btn--night" href="https://t.me/gl1reviewsandsuggestions" target="_blank" rel="noopener">Посмотреть отзывы <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="review__card">
+          <form class="rv" id="rv-form" novalidate>
+            <fieldset class="rv-field">
+              <legend class="rv-label">Оценка <small id="rv-stars-word"></small></legend>
+              <div class="rv-stars" id="rv-stars"></div>
+              <p class="rv-error" id="rv-err-rating"></p>
+            </fieldset>
+            <fieldset class="rv-field">
+              <legend class="rv-label"><span id="rv-liked-title">Что понравилось больше всего</span> <small>- если есть</small></legend>
+              <div class="rv-chips" id="rv-liked"></div>
+            </fieldset>
+            <div class="rv-field">
+              <label class="rv-label" for="rv-text">Отзыв <small>- своими словами</small></label>
+              <div class="rv-chips" id="rv-questions"></div>
+              <textarea id="rv-text" name="text" maxlength="2000"></textarea>
+              <div class="rv-meter" id="rv-meter" aria-hidden="true"><i></i></div>
+              <p class="rv-count" id="rv-count" aria-live="polite"></p>
+              <p class="rv-error" id="rv-err-text"></p>
+            </div>
+            <div class="rv-field">
+              <label class="rv-label" for="rv-name">Как вас подписать</label>
+              <input type="text" id="rv-name" name="name" maxlength="80" autocomplete="name" placeholder="Имя, можно с названием компании">
+              <p class="rv-error" id="rv-err-name"></p>
+            </div>
+            <div class="rv-field">
+              <label class="rv-label" for="rv-site">Сайт, о котором отзыв <small>- если есть</small></label>
+              <input type="text" id="rv-site" name="site" maxlength="200" inputmode="url" autocomplete="url" placeholder="Адрес сайта">
+            </div>
+            <div class="rv-hp" aria-hidden="true"><label>Сайт <input type="text" name="website" id="rv-website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="rv-field">
+              <label class="rv-check"><input type="checkbox" id="rv-publish" name="publish"><span>Можно опубликовать отзыв с моим именем в Telegram-канале с отзывами</span></label>
+            </div>
+            <button class="rv-btn" type="submit" id="rv-send">Отправить отзыв</button>
+            <div class="rv-fail" id="rv-fail" role="alert" hidden>
+              <p>Не получилось отправить. Проверьте интернет и нажмите «Отправить отзыв» ещё раз.</p>
+              <p>Или отправьте готовым сообщением: <a class="rv-link" id="rv-fail-tg" href="#" target="_blank" rel="noopener">в Telegram</a> или <a class="rv-link" id="rv-fail-mail" href="#">на почту</a>.</p>
+            </div>
+          </form>
+          <div class="rv-done" id="rv-done" hidden>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M20 33l8 8 16-17"/></svg>
+            <p class="rv-done__title" tabindex="-1">Отзыв отправлен</p>
+            <p>Спасибо, что нашли минуту!</p>
+          </div>
+        </div>
+      </div>
       <footer class="contact__foot">
         <span>DIGITAL ДЛЯ БИЗНЕСА · АРСЕНИЙ АСЯНОВ</span>
         <span>© 2026</span>
