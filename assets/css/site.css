@@ -454,6 +454,12 @@ button.frame:active { transform: scale(.99); transition-duration: .12s; }
 .review__title { font-family: var(--f-display); font-weight: 700; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -.03em; }
 .review__lead { font-size: 17px; line-height: 1.6; color: var(--on-night-muted); max-width: 40ch; }
 .review__lead a { color: var(--accent-on-night); text-underline-offset: 3px; }
+.review__actions { margin-top: 6px; }
+/* Кнопка-обводка для тёмного фона */
+.btn--night { box-shadow: inset 0 0 0 1px rgba(233, 237, 243, .5); color: var(--on-night); }
+@media (hover: hover) and (pointer: fine) {
+  .btn--night:hover { background: var(--on-night); color: var(--night); box-shadow: none; }
+}
 .review__card { background: var(--sheet); color: var(--ink); border-radius: 20px; padding: clamp(20px, 3.4vw, 36px); }
 
 .rv-field { margin: 0 0 26px; padding: 0; border: 0; min-width: 0; }
